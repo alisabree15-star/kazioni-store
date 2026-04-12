@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 export default function Home() {
-  const whatsappNumber = "218915044855"; // تأكد من رقمك هنا
+  const whatsappNumber = "218915044855"; 
   const siteUrl = "https://kazioni-store.vercel.app";
   
   const [dims, setDims] = useState({ length: '', width: '', height: '', qty: '1' });
@@ -43,13 +43,13 @@ export default function Home() {
 
   const products = [
     { id: 1, name: "ولاعة ساعة فاخرة ✨", img: "/images/product1.jpg", price: "75 د.ل", pColor: "text-blue-700" },
-    { id: 2, name: "ساعة ذكية Ultra ⌚", img: "/images/product2.jpg", price: "1850 $", pColor: "text-amber-600" },
+    { id: 2, name: "ماكينة تجفيف الفواكه بالتبريد", img: "/images/product2.jpg", price: "1850 $", pColor: "text-amber-600" },
     { id: 3, name: "منتج جديد 2 🚢", img: "/images/product3.jpg", price: "قريباً", pColor: "text-gray-400" }
   ];
 
   return (
     <main className="min-h-screen bg-gray-100 text-right font-sans text-black pb-32" dir="rtl">
-      <nav className="bg-blue-900 text-white p-5 shadow-lg sticky top-0 z-50 flex justify-between items-center">
+      <nav className="bg-blue-900 text-white p-5 shadow-lg sticky top-0 z-50 flex justify-between items-center text-white">
         <div>
           <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
           <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest text-white">التجارة والشحن الدولي</p>
@@ -96,7 +96,7 @@ export default function Home() {
 
       <div className="fixed bottom-6 left-6 right-6 max-w-md mx-auto z-50">
         {copyMsg && <div className="bg-black text-white text-[10px] py-2 px-4 rounded-full mb-2 text-center shadow-xl">تم نسخ الرابط! ✅</div>}
-        <button onClick={shareSite} className="w-full bg-black text-white py-4 rounded-full font-bold shadow-2xl flex items-center justify-center gap-2 border border-gray-700 text-sm">
+        <button onClick={shareSite} className="w-full bg-black text-white py-4 rounded-full font-bold shadow-2xl flex items-center justify-center gap-2 border border-gray-700 text-sm text-white">
           <span>📤</span> مشاركة المتجر
         </button>
       </div>
