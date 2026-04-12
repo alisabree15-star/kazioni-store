@@ -1,8 +1,9 @@
 "use client";
 
 export default function Home() {
-  const whatsappNumber = "218910000000";
-  const whatsappLink = "https://wa.me/" + whatsappNumber;
+  const whatsappNumber = "218915044855"; // ضعه هنا بدقة
+  const message = "السلام عليكم الحاج كزيوني، استفسر عن المنتج المعروض";
+  const whatsappLink = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
 
   return (
     <main className="min-h-screen bg-white text-right font-sans" dir="rtl">
@@ -31,7 +32,7 @@ export default function Home() {
             </p>
             <div className="mt-4 text-blue-700 font-black text-2xl tracking-tighter">السعر عند الاستفسار</div>
             
-            <a href={whatsappLink} className="block w-full mt-6 bg-green-500 text-white py-4 rounded-2xl font-bold text-lg shadow-lg active:scale-95 transition-all">
+            <a href={whatsappLink} target="_blank" className="block w-full mt-6 bg-green-500 text-white py-4 rounded-2xl font-bold text-lg shadow-lg active:scale-95 transition-all">
               اطلب عبر واتساب الآن
             </a>
           </div>
@@ -39,7 +40,7 @@ export default function Home() {
       </section>
 
       <footer className="py-10 text-center text-gray-400 text-[10px]">
-        <p>تصميم وتطوير: م. علي دكيلة © 2026</p>
+        <p>تصميم وتطوير: م. علي دخيل © 2026</p>
       </footer>
     </main>
   );
