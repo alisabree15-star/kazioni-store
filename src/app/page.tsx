@@ -42,14 +42,13 @@ export default function Home() {
   };
 
   const products = [
-    { id: 1, name: "ولاعة ساعة فاخرة ✨", img: "/images/product1.jpg", price: "75 د.ل", pColor: "text-blue-700" },
+    { id: 1, name: "لوحة مفاتيح للهواتف محمولة (للمتاجر)", img: "/images/product1.jpg", price: "30 $", pColor: "text-amber-600" },
     { id: 2, name: "ماكينة تجفيف الفواكه بالتبريد", img: "/images/product2.jpg", price: "1850 $", pColor: "text-amber-600" },
     { id: 3, name: "ماكينة صنع الفطيرة والتورتيلا", img: "/images/product3.jpg", price: "850 $", pColor: "text-amber-600" }
   ];
 
   return (
     <main className="min-h-screen bg-gray-50 text-right font-sans text-black pb-32" dir="rtl">
-      {/* الهيدر */}
       <nav className="bg-blue-900 text-white p-5 shadow-lg sticky top-0 z-50 flex justify-between items-center">
         <div>
           <h1 className="text-xl font-black tracking-tighter">الحاج كزيوني & Swivel</h1>
@@ -57,14 +56,12 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* قسم أسعار الشحن الجديد (الاحترافي) */}
       <section className="p-6 max-w-md mx-auto mt-2">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-black text-gray-800 border-r-4 border-blue-900 pr-3">أسعار الشحن 📦</h3>
           <span className="bg-amber-100 text-amber-800 text-[10px] font-black px-3 py-1 rounded-full shadow-sm">تحديث: أبريل 2026</span>
         </div>
 
-        {/* كارت الشحن الجوي */}
         <div className="bg-white rounded-3xl shadow-lg border border-gray-100 mb-5 overflow-hidden">
           <div className="bg-gradient-to-r from-blue-900 to-blue-700 p-4 text-white flex justify-between items-center shadow-inner">
             <h4 className="font-bold text-lg">✈️ الشحن الجوي</h4>
@@ -72,15 +69,15 @@ export default function Home() {
           </div>
           <div className="p-5 space-y-3">
             <div className="flex justify-between items-center border-b border-gray-50 pb-2">
-              <span className="text-xs font-bold text-gray-500">عادي <span className="font-normal text-[10px] text-gray-400">(1 - 100 كجم)</span></span>
+              <span className="text-xs font-bold text-gray-500">عادي (1 - 100 كجم)</span>
               <span className="font-black text-blue-700">9.25 $</span>
             </div>
             <div className="flex justify-between items-center border-b border-gray-50 pb-2">
-              <span className="text-xs font-bold text-gray-500">عادي <span className="font-normal text-[10px] text-gray-400">(100 - 250 كجم)</span></span>
+              <span className="text-xs font-bold text-gray-500">عادي (100 - 250 كجم)</span>
               <span className="font-black text-blue-700">9.10 $</span>
             </div>
             <div className="flex justify-between items-center border-b border-gray-50 pb-2">
-              <span className="text-xs font-bold text-gray-500">عادي <span className="font-normal text-[10px] text-gray-400">(250 - 500 كجم)</span></span>
+              <span className="text-xs font-bold text-gray-500">عادي (250 - 500 كجم)</span>
               <span className="font-black text-blue-700">9.00 $</span>
             </div>
             <div className="flex justify-between items-center border-b border-gray-50 pb-2">
@@ -98,7 +95,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* كارت الشحن البحري */}
         <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
           <div className="bg-gradient-to-r from-teal-800 to-teal-600 p-4 text-white flex justify-between items-center shadow-inner">
             <h4 className="font-bold text-lg">🚢 الشحن البحري</h4>
@@ -121,20 +117,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* حاسبة CBM */}
       <section className="p-6 max-w-md mx-auto pt-0">
         <div className="bg-white rounded-3xl p-6 shadow-xl border-t-8 border-teal-700">
           <h3 className="text-lg font-black text-teal-800 mb-2 flex items-center tracking-tight">
             <span className="ml-2 text-xl">🧮</span> حاسبة الحجم (CBM)
           </h3>
-          <p className="text-[10px] text-gray-500 mb-4 font-bold">احسب حجم بضاعتك لتعرف تكلفة الشحن البحري بدقة.</p>
           <div className="grid grid-cols-2 gap-3 mb-4">
-            <input type="number" value={dims.length} onChange={(e)=>setDims({...dims, length: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-black text-sm outline-none focus:border-teal-500 transition-colors" placeholder="الطول cm"/>
-            <input type="number" value={dims.width} onChange={(e)=>setDims({...dims, width: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-black text-sm outline-none focus:border-teal-500 transition-colors" placeholder="العرض cm"/>
-            <input type="number" value={dims.height} onChange={(e)=>setDims({...dims, height: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-black text-sm outline-none focus:border-teal-500 transition-colors" placeholder="الارتفاع cm"/>
-            <input type="number" value={dims.qty} onChange={(e)=>setDims({...dims, qty: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-black text-sm outline-none focus:border-teal-500 transition-colors" placeholder="العدد"/>
+            <input type="number" value={dims.length} onChange={(e)=>setDims({...dims, length: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-black text-sm outline-none" placeholder="الطول cm"/>
+            <input type="number" value={dims.width} onChange={(e)=>setDims({...dims, width: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-black text-sm outline-none" placeholder="العرض cm"/>
+            <input type="number" value={dims.height} onChange={(e)=>setDims({...dims, height: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-black text-sm outline-none" placeholder="الارتفاع cm"/>
+            <input type="number" value={dims.qty} onChange={(e)=>setDims({...dims, qty: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-black text-sm outline-none" placeholder="العدد"/>
           </div>
-          <button onClick={calculateCBM} className="w-full bg-teal-700 text-white py-4 rounded-xl font-black shadow-lg active:scale-95 transition-all">احسب الحجم الآن</button>
+          <button onClick={calculateCBM} className="w-full bg-teal-700 text-white py-4 rounded-xl font-black shadow-lg">احسب الآن</button>
           {result !== null && (
             <div className="mt-4 bg-teal-50 border-2 border-teal-100 p-4 rounded-2xl text-center">
               <span className="text-3xl font-black text-teal-900">{result} CBM</span>
@@ -143,7 +137,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* المنتجات */}
       <section className="p-6 max-w-md mx-auto pt-2">
         <h3 className="text-xl font-bold text-gray-800 mb-4 border-r-4 border-orange-500 pr-3">وصل حديثاً 🇨🇳</h3>
         <div className="grid grid-cols-2 gap-4">
@@ -162,7 +155,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* زر المشاركة */}
       <div className="fixed bottom-6 left-6 right-6 max-w-md mx-auto z-50">
         {copyMsg && <div className="bg-black text-white text-[10px] py-2 px-4 rounded-full mb-2 text-center shadow-xl">تم نسخ الرابط! ✅</div>}
         <button onClick={shareSite} className="w-full bg-black text-white py-4 rounded-full font-bold shadow-2xl flex items-center justify-center gap-2 border border-gray-700 text-sm">
