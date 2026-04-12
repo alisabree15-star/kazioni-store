@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 export default function Home() {
-  const whatsappNumber = "218915044855"; 
+  const whatsappNumber = "218915044855"; // تأكد من رقمك هنا
   const siteUrl = "https://kazioni-store.vercel.app";
   
   const [dims, setDims] = useState({ length: '', width: '', height: '', qty: '1' });
@@ -41,24 +41,22 @@ export default function Home() {
     setTimeout(() => setCopyMsg(false), 3000);
   };
 
-  // --- قسم التعديل هنا يا باشمهندس علي ---
   const products = [
-    { id: 1, name: "ولاعة ساعة فاخرة ✨", img: "/images/product1.jpg" },
-    { id: 2, name: "ماكينة تجفيف الفواكةبالتبريد", img: "/images/product2.jpg" }, // غير "ساعة ذكية" لأي اسم تريده
-    { id: 3, name: "ماكينة صنع الفطيرة والتورتيلا", img: "/images/product3.jpg" }
+    { id: 1, name: "ولاعة ساعة فاخرة ✨", img: "/images/product1.jpg", price: "75 د.ل", pColor: "text-blue-700" },
+    { id: 2, name: "ساعة ذكية Ultra ⌚", img: "/images/product2.jpg", price: "1850 $", pColor: "text-amber-600" },
+    { id: 3, name: "منتج جديد 2 🚢", img: "/images/product3.jpg", price: "قريباً", pColor: "text-gray-400" }
   ];
-  // ---------------------------------------
 
   return (
     <main className="min-h-screen bg-gray-100 text-right font-sans text-black pb-32" dir="rtl">
-      <nav className="bg-blue-900 text-white p-5 shadow-lg sticky top-0 z-50 flex justify-between items-center text-white">
+      <nav className="bg-blue-900 text-white p-5 shadow-lg sticky top-0 z-50 flex justify-between items-center">
         <div>
           <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
           <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest text-white">التجارة والشحن الدولي</p>
         </div>
       </nav>
 
-      <section className="p-6 max-w-md mx-auto text-white">
+      <section className="p-6 max-w-md mx-auto">
         <h3 className="text-xl font-bold text-gray-800 mb-4 border-r-4 border-orange-500 pr-3">وصل حديثاً 🇨🇳</h3>
         <div className="grid grid-cols-2 gap-4">
           {products.map((product) => (
@@ -67,8 +65,9 @@ export default function Home() {
                 <img src={product.img} alt={product.name} className="max-h-full max-w-full object-contain" onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/150?text=H.K+Store"; }}/>
               </div>
               <div className="p-3 flex-1 flex flex-col justify-between text-center">
-                <h4 className="font-bold text-[11px] text-black mb-2">{product.name}</h4>
-                <a href={"https://wa.me/" + whatsappNumber + "?text=استفسار عن " + product.name} className="bg-green-500 text-white text-[10px] py-2 rounded-lg font-bold">طلب واتساب</a>
+                <h4 className="font-bold text-[11px] text-black mb-1 leading-tight">{product.name}</h4>
+                <p className={"font-black text-xs mb-2 " + product.pColor}>{product.price}</p>
+                <a href={"https://wa.me/" + whatsappNumber + "?text=استفسار عن " + product.name} className="bg-green-500 text-white text-[10px] py-2 rounded-lg font-bold shadow-sm active:scale-95 transition-all">طلب واتساب</a>
               </div>
             </div>
           ))}
