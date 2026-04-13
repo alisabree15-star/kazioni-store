@@ -62,7 +62,7 @@ export default function Home() {
       img: "/images/product2.jpg", 
       price: "1850 $", 
       pColor: "text-amber-600",
-      shippingNote: "هذا السعر شامل الشحن والعمولة",
+      shippingNote: "متوفر شحن بحري فقط (شامل الشحن والعمولة)",
       description: "أحدث تقنيات التجفيف بالتبريد للحفاظ على القيمة الغذائية للفواكه. مثالية للمشاريع الغذائية الناشئة.",
       moq: "1 ماكينة",
       cbm: "0.680",
@@ -74,7 +74,7 @@ export default function Home() {
       img: "/images/product3.jpg", 
       price: "850 $", 
       pColor: "text-amber-600",
-      shippingNote: "هذا السعر شامل الشحن والعمولة",
+      shippingNote: "متوفر شحن بحري فقط (شامل الشحن والعمولة)",
       description: "ماكينة آلية بالكامل لإنتاج الفطائر والتورتيلا بجودة عالية وسرعة فائقة، سهلة الاستخدام والتنظيف.",
       moq: "1 ماكينة",
       cbm: "0.130",
@@ -130,7 +130,203 @@ export default function Home() {
           <span className="bg-amber-100 text-amber-800 text-[10px] font-bold px-3 py-1 rounded-full text-black">منتج حصري 🇨🇳</span>
           <h2 className="text-2xl font-black mt-3 mb-1 leading-tight text-black">{selectedProduct.name}</h2>
           <p className={"text-xl font-black mb-1 " + selectedProduct.pColor}>{selectedProduct.price}</p>
-          <p className="text-[11px] font-bold text-gray-500 mb-4">{selectedProduct.shippingNote}</p>
+          <p className="text-[11px] font-bold text-blue-600 mb-4 bg-blue-50 p-1 inline-block rounded">{selectedProduct.shippingNote}</p>
+          
+          <div className="bg-gray-50 rounded-2xl p-4 mb-6 text-black border border-gray-100">
+            <h4 className="font-bold text-sm mb-3 text-blue-900 underline">تفاصيل الشحن والطلب:</h4>
+            
+            <div className="grid grid-cols-2 gap-2 mb-4">
+              <div className="bg-white p-2 rounded-lg text-center border border-gray-100 shadow-sm">
+                <p className="text-[10px] text-gray-500 font-bold mb-1">الحجم (CBM)</p>
+                <p className="text-sm font-black text-blue-800">{selectedProduct.cbm}</p>
+              </div>
+              <div className="bg-white p-2 rounded-lg text-center border border-gray-100 shadow-sm">
+                <p className="text-[10px] text-gray-500 font-bold mb-1">الوزن (KG)</p>
+                <p className="text-sm font-black text-orange-600">{selectedProduct.weight}</p>
+              </div>
+            </div>
+
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">{selectedProduct.description}</p>
+            
+            <div className="flex justify-between items-center bg-white p-3 rounded-xl border border-gray-100">
+              <span className="text-xs font-bold text-gray-500">أقل كمية للطلب:</span>
+              <span className="text-sm font-black text-red-600">{selectedProduct.moq}</span>
+            </div>
+          </div>
+
+          <a href={"https://wa.me/" + whatsappNumber + "?text=استفسار عن " + selectedProduct.name} className="block w-full bg-green-500 text-white py-4 rounded-2xl font-bold text-center shadow-lg active:scale-95 transition-all">
+            تواصل للحجز والطلب الآن 💬
+          </a>
+        </div>
+
+        <div className="fixed bottom-6 left-6 right-6 max-w-md mx-auto z-50">
+          <button onClick={shareSite} className="w-full bg-black text-white py-4 rounded-full font-bold shadow-2xl flex items-center justify-center gap-2 border border-gray-700 text-sm">
+            <span>📤</span> مشاركة رابط هذا المنتج
+          </button>
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="min-h-screen bg-gray-50 text-right font-sans text-black pb-32" dir="rtl">
+      <nav className="bg-blue-900 text-white p-4 shadow-xl sticky top-0 z-50 flex justify-between items-center border-b-4 border-amber-500">
+        <div>
+          <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
+          <p className="text-[10px] text-amber-300 font-bold uppercase tracking-widest">التجارة والشحن الدولي</p>
+        </div>
+        <div className="w-14 h-14 bg-gradient-to-tr from-amber-500 to-yellow-300 rounded-xl flex items-center justify-center shadow-lg border-2 border-white overflow-hidden p-1">
+          <img src="/images/logo.png?v=4" alt="لوجو الحاج كزيوني" className="w-full h-full object-contain mix-blend-multiply opacity-90" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+        </div>
+      </nav>
+
+      <section className="p-6 max-w-md mx-auto mt-2 text-black">
+        <div className="flex justify-between items-center mb-4 gap-2">
+          <h3 className="text-[16px] leading-tight font-black text-gray-800 border-r-4 border-blue-900 pr-3">أسعار الشحن من الصين 🇨🇳 إلى ليبيا 🇱🇾</h3>
+          <span className="bg-amber-100 text-amber-800 text-[10px] font-black px-2 py-1 rounded-full shadow-sm whitespace-nowrap">أبريل 2026</span>
+        </div>
+
+        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 mb-4 overflow-hidden duration-300">
+          <button onClick={() => setIsAirOpen(!isAirOpen)} className="w-full bg-gradient-to-r from-blue-900 to-blue-700 p-4 text-white flex justify-between items-center shadow-inner focus:outline-none">
+            <h4 className="font-bold text-lg text-white">✈️ الشحن الجوي</h4>
+            <span className="text-lg text-white">{isAirOpen ? '🔼' : '🔽'}</span>
+          </button>
+          {isAirOpen && (
+            <div className="p-5 space-y-3 bg-blue-50/50 border-t border-blue-100 font-bold text-black">
+cat << 'EOF' > ~/kazioni-swivel-store/src/app/page.tsx
+"use client";
+import { useState } from 'react';
+
+export default function Home() {
+  const whatsappNumber = "218915044855"; 
+  const siteUrl = "https://kazioni-store.vercel.app";
+  
+  const [dims, setDims] = useState({ length: '', width: '', height: '', qty: '1' });
+  const [result, setResult] = useState<number | null>(null);
+  const [copyMsg, setCopyMsg] = useState(false);
+  
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  
+  const [isAirOpen, setIsAirOpen] = useState(false);
+  const [isSeaOpen, setIsSeaOpen] = useState(false);
+
+  const calculateCBM = () => {
+    const l = parseFloat(dims.length);
+    const w = parseFloat(dims.width);
+    const h = parseFloat(dims.height);
+    const q = parseInt(dims.qty);
+    if (l && w && h) {
+      const cbm = (l * w * h * q) / 1000000;
+      setResult(parseFloat(cbm.toFixed(3)));
+    }
+  };
+
+  const shareSite = async () => {
+    const text = selectedProduct 
+      ? `شاهد تفاصيل ${selectedProduct.name} عبر موقعنا` 
+      : 'شاهد أحدث المنتجات واحسب شحنتك عبر موقعنا الرسمي';
+    
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: 'الحاج كزيوني & Swivel', text: text, url: siteUrl });
+      } catch (err) { copyToClipboard(); }
+    } else { copyToClipboard(); }
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(siteUrl);
+    setCopyMsg(true);
+    setTimeout(() => setCopyMsg(false), 3000);
+  };
+
+  const products = [
+    { 
+      id: 1, 
+      name: "لوحة مفاتيح للهواتف محمولة (للمتاجر)", 
+      img: "/images/product1.jpg", 
+      price: "30 $", 
+      pColor: "text-amber-600",
+      shippingNote: "السعر لا يشمل الشحن",
+      description: "لوحة مفاتيح احترافية مصممة للهواتف، تدعم الربط السريع لتسهيل عمليات البيع والرد على الزبائن.",
+      moq: "10 قطع",
+      cbm: "0.002",
+      weight: "0.3"
+    },
+    { 
+      id: 2, 
+      name: "ماكينة تجفيف الفواكه بالتبريد", 
+      img: "/images/product2.jpg", 
+      price: "1850 $", 
+      pColor: "text-amber-600",
+      shippingNote: "متوفر شحن بحري فقط (شامل الشحن والعمولة)",
+      description: "أحدث تقنيات التجفيف بالتبريد للحفاظ على القيمة الغذائية للفواكه. مثالية للمشاريع الغذائية الناشئة.",
+      moq: "1 ماكينة",
+      cbm: "0.680",
+      weight: "80"
+    },
+    { 
+      id: 3, 
+      name: "ماكينة صنع الفطيرة والتورتيلا", 
+      img: "/images/product3.jpg", 
+      price: "850 $", 
+      pColor: "text-amber-600",
+      shippingNote: "متوفر شحن بحري فقط (شامل الشحن والعمولة)",
+      description: "ماكينة آلية بالكامل لإنتاج الفطائر والتورتيلا بجودة عالية وسرعة فائقة، سهلة الاستخدام والتنظيف.",
+      moq: "1 ماكينة",
+      cbm: "0.130",
+      weight: "60"
+    },
+    { 
+      id: 4, 
+      name: "سلة القمامة الذكية 2026 ( للمتاجر )", 
+      img: "/images/product4.jpg", 
+      price: "50 $", 
+      pColor: "text-amber-600",
+      shippingNote: "السعر لا يشمل الشحن",
+      description: "سلة ذكية تعمل بالحساسات، تصميم عصري وأنيق يتناسب مع المكاتب والمحلات الكبرى، نظام إغلاق محكم لمنع الروائح.",
+      moq: "10 قطع",
+      cbm: "0.090",
+      weight: "4"
+    },
+    { 
+      id: 5, 
+      name: "ماكينه طباعه حراريه محموله ✨", 
+      img: "/images/product5.jpg", 
+      price: "75 $", 
+      pColor: "text-amber-600",
+      shippingNote: "السعر لا يشمل الشحن",
+      description: "ماكينة حرارية متطورة متعددة الاستخدامات، دقة عالية في الأداء وكفاءة في استهلاك الطاقة.",
+      moq: "10 قطع",
+      cbm: "0.150",
+      weight: "23"
+    },
+    { 
+      id: 6, 
+      name: "الة عصر البرتقال والفواكه ( للمتاجر )", 
+      img: "/images/product6.jpg", 
+      price: "25 $", 
+      pColor: "text-amber-600",
+      shippingNote: "السعر لا يشمل الشحن",
+      description: "آلة عصر احترافية وعملية، مصممة لتحمل الاستخدام المستمر في المتاجر والمقاهي. تضمن استخلاص العصير بسرعة وكفاءة عالية.",
+      moq: "10 قطع",
+      cbm: "0.025",
+      weight: "5.5"
+    }
+  ];
+
+  if (selectedProduct) {
+    return (
+      <main className="min-h-screen bg-white text-right font-sans text-black pb-24" dir="rtl">
+        <div className="relative h-80 bg-gray-100 flex items-center justify-center p-4">
+          <button onClick={() => setSelectedProduct(null)} className="absolute top-6 right-6 bg-white/80 w-10 h-10 rounded-full shadow-lg flex items-center justify-center font-bold z-10 text-black">✕</button>
+          <img src={selectedProduct.img} className="max-h-full object-contain" onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/150?text=Kazioni+Store"; }} />
+        </div>
+        
+        <div className="p-6">
+          <span className="bg-amber-100 text-amber-800 text-[10px] font-bold px-3 py-1 rounded-full text-black">منتج حصري 🇨🇳</span>
+          <h2 className="text-2xl font-black mt-3 mb-1 leading-tight text-black">{selectedProduct.name}</h2>
+          <p className={"text-xl font-black mb-1 " + selectedProduct.pColor}>{selectedProduct.price}</p>
+          <p className="text-[11px] font-bold text-red-600 mb-4">{selectedProduct.shippingNote}</p>
           
           <div className="bg-gray-50 rounded-2xl p-4 mb-6 text-black border border-gray-100">
             <h4 className="font-bold text-sm mb-3 text-blue-900 underline">تفاصيل الشحن والطلب:</h4>
@@ -244,7 +440,7 @@ export default function Home() {
                 <div>
                   <h4 className="font-bold text-[11px] text-black mb-1 leading-tight text-black">{product.name}</h4>
                   <p className={"font-black text-xs " + product.pColor}>{product.price}</p>
-                  <p className="text-[8px] font-bold text-gray-400 mt-0.5 leading-none">{product.shippingNote}</p>
+                  <p className={"text-[8px] font-bold mt-0.5 leading-none " + (product.id === 2 || product.id === 3 ? "text-red-600" : "text-gray-400")}>{product.shippingNote}</p>
                 </div>
                 <button className="bg-gray-100 text-gray-800 text-[9px] py-1 mt-3 rounded-md font-bold">التفاصيل ←</button>
               </div>
