@@ -105,7 +105,8 @@ export default function Home() {
     { id: 6, name: "الة عصر البرتقال والفواكه ( للمتاجر )", img: "/images/product6.jpg", price: "25 $", pColor: "text-amber-600", shippingNote: "السعر لا يشمل الشحن", description: "آلة عصر احترافية وعملية، مصممة لتحمل الاستخدام المستمر في المتاجر والمقاهي. تضمن استخلاص العصير بسرعة وكفاءة عالية.", moq: "10 قطع", cbm: "0.025", weight: "5.5" },
     { id: 7, name: "ماكينة بيتزا موديل 2025 🔥", img: "/images/product7.jpg", price: "430 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن جوي سريع ✈️)", description: "ماكينة بيتزا تجارية حديثة، مصممة خصيصاً للمطاعم والمقاهي. توفر توزيعاً حرارياً متساوياً لخبز مثالي وسريع.", moq: "1 قطعة", cbm: "0.150", weight: "35" },
     { id: 8, name: "ماكينة التنظيف بالثلج الجاف 👀", img: "/images/product8.jpg", price: "1400 $", pColor: "text-amber-600", shippingNote: "شامل الشحن والعمولة إلى ليبيا (شحن بحري فقط 🚢)", description: "ماكينة تنظيف صناعية متطورة بتقنية الثلج الجاف (Dry Ice Blasting) من Crodium. حل مثالي لتنظيف المحركات وإزالة الشحوم الكربونية.", moq: "1 قطعة", cbm: "0.450", weight: "75" },
-    { id: 9, name: "آلة رحي الحبوب المميزة 🥜", img: "/images/product9.jpg", price: "225 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "آلة رحي وتنعيم تجارية من الستانلس ستيل المقاوم للصدأ. مصممة خصيصاً لطحن الحبوب وصنع المعاجين مثل زبدة الفول السوداني والطحينة بكفاءة عالية. تتميز بقادوس واسع ومحرك قوي يتحمل ضغط العمل المستمر، مما يجعلها الخيار المثالي للمحامص والمشاريع الإنتاجية.", moq: "1 قطعة", cbm: "0.090", weight: "30" }
+    { id: 9, name: "آلة رحي الحبوب المميزة 🥜", img: "/images/product9.jpg", price: "225 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "آلة رحي وتنعيم تجارية من الستانلس ستيل المقاوم للصدأ. مصممة خصيصاً لطحن الحبوب وصنع المعاجين مثل زبدة الفول السوداني والطحينة بكفاءة عالية.", moq: "1 قطعة", cbm: "0.090", weight: "30" },
+    { id: 10, name: "آلة صنع المثلجات (جيلاطي المفترش ❤️)", img: "/images/product10.jpg", price: "400 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "أبهر زبائنك بعروض الآيس كريم المقلي (جيلاطي المفترش) الطازجة والمبتكرة. تتميز هذه الآلة المكتبية المدمجة بسطح تجميد مسطح ومصقول من الستانلس ستيل المقاوم للصدأ، مما يضمن أداءً تجميدياً فائق السرعة لصنع لفائف الآيس كريم (Rolled Ice Cream) المثالية في ثوانٍ معدودة. هيكل قوي ومتين، سهل التنظيف والتشغيل، ومثالي لإضافة لمسة فنية لمقهاك أو محل الحلوى الخاص بك.", moq: "1 قطعة", cbm: "0.100", weight: "25" }
   ];
 
   if (selectedProduct) {
@@ -225,20 +226,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="p-6 max-w-md mx-auto pt-0 text-black">
-        <div className="flex justify-between items-center mb-4 gap-2">
-          <h3 className="text-[16px] leading-tight font-black text-gray-800 border-r-4 border-blue-900 pr-3">أسعار الشحن من الصين إلى ليبيا</h3>
-        </div>
-        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 mb-4 overflow-hidden">
-          <button onClick={() => setIsAirOpen(!isAirOpen)} className="w-full bg-gray-100 p-4 text-gray-800 flex justify-between items-center focus:outline-none"><h4 className="font-bold text-sm">✈️ الشحن الجوي</h4><span>{isAirOpen ? '🔼' : '🔽'}</span></button>
-          {isAirOpen && (<div className="p-4 space-y-2 bg-white text-xs font-bold"><div className="flex justify-between border-b pb-1"><span>عادي (1-100 كجم)</span><span className="text-blue-800">9.25 $</span></div><div className="flex justify-between border-b pb-1"><span>عادي (100-250 كجم)</span><span className="text-blue-800">9.10 $</span></div></div>)}
-        </div>
-        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 mb-4 overflow-hidden">
-          <button onClick={() => setIsSeaOpen(!isSeaOpen)} className="w-full bg-gray-100 p-4 text-gray-800 flex justify-between items-center focus:outline-none"><h4 className="font-bold text-sm">🚢 الشحن البحري</h4><span>{isSeaOpen ? '🔼' : '🔽'}</span></button>
-          {isSeaOpen && (<div className="p-4 space-y-2 bg-white text-xs font-bold"><div className="flex justify-between border-b pb-1"><span>تصنيف عادي 📦</span><span className="text-teal-800">158.5 $ / CBM</span></div><div className="flex justify-between"><span>ماركة كوبي 👕</span><span className="text-orange-600">168.5 $ / CBM</span></div></div>)}
-        </div>
-      </section>
-
       <section className="p-6 max-w-md mx-auto pt-0 text-black pb-12">
         <div className="bg-white rounded-3xl p-5 shadow-sm border border-gray-100">
           <h3 className="text-sm font-black text-teal-800 mb-3 flex items-center">🧮 حاسبة الحجم اليدوية (CBM)</h3>
@@ -262,7 +249,6 @@ export default function Home() {
           )}
         </button>
       </div>
-
     </main>
   );
 }
