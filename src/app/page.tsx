@@ -53,35 +53,7 @@ export default function Home() {
     { 
       id: 2, 
       name: "ماكينة تجفيف الفواكه بالتبريد", 
-      img: "/images/product2.jpg", 
-      price: "1850 $", 
-      pColor: "text-amber-600",
-      description: "أحدث تقنيات التجفيف بالتبريد (Freeze Drying) للحفاظ على القيمة الغذائية للفواكه. مثالية للمشاريع الغذائية الناشئة.",
-      moq: "1 ماكينة"
-    },
-    { 
-      id: 3, 
-      name: "ماكينة صنع الفطيرة والتورتيلا", 
-      img: "/images/product3.jpg", 
-      price: "850 $", 
-      pColor: "text-amber-600",
-      description: "ماكينة آلية بالكامل لإنتاج الفطائر والتورتيلا بجودة عالية وسرعة فائقة، سهلة الاستخدام والتنظيف.",
-      moq: "1 ماكينة"
-    },
-    { 
-      id: 4, 
-      name: "سلة القمامة الذكية 2026 ( للمتاجر )", 
-      img: "/images/product4.jpg", 
-      price: "50 $", 
-      pColor: "text-amber-600",
-      description: "سلة ذكية تعمل بالحساسات، تصميم عصري وأنيق يتناسب مع المكاتب والمحلات الكبرى، نظام إغلاق محكم لمنع الروائح.",
-      moq: "10 قطع"
-    }
-  ];
-
-  if (selectedProduct) {
-    return (
-      <main className="min-h-screen bg-white text-right font-
+      img: "/images/product2.
 cat << 'EOF' > ~/kazioni-swivel-store/src/app/page.tsx
 "use client";
 import { useState } from 'react';
@@ -174,7 +146,7 @@ export default function Home() {
         
         <div className="p-6">
           <span className="bg-amber-100 text-amber-800 text-[10px] font-bold px-3 py-1 rounded-full">منتج حصري 🇨🇳</span>
-          <h2 className="text-2xl font-black mt-3 mb-2">{selectedProduct.name}</h2>
+          <h2 className="text-2xl font-black mt-3 mb-2 leading-tight">{selectedProduct.name}</h2>
           <p className={"text-xl font-black mb-4 " + selectedProduct.pColor}>{selectedProduct.price}</p>
           
           <div className="bg-gray-50 rounded-2xl p-4 mb-6 text-black">
@@ -204,8 +176,8 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50 text-right font-sans text-black pb-32" dir="rtl">
       <nav className="bg-blue-900 text-white p-5 shadow-lg sticky top-0 z-50 flex justify-between items-center">
         <div>
-          <h1 className="text-xl font-black tracking-tighter">الحاج كزيوني & Swivel</h1>
-          <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest">التجارة والشحن الدولي</p>
+          <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
+          <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest text-white">التجارة والشحن الدولي</p>
         </div>
       </nav>
 
@@ -218,7 +190,6 @@ export default function Home() {
         <div className="bg-white rounded-3xl shadow-lg border border-gray-100 mb-5 overflow-hidden">
           <div className="bg-gradient-to-r from-blue-900 to-blue-700 p-4 text-white flex justify-between items-center shadow-inner">
             <h4 className="font-bold text-lg">✈️ الشحن الجوي</h4>
-            <span className="text-[10px] bg-white/20 px-2 py-1 rounded-lg">السعر للكيلو</span>
           </div>
           <div className="p-5 space-y-3">
             <div className="flex justify-between items-center border-b border-gray-50 pb-2">
@@ -235,9 +206,8 @@ export default function Home() {
         <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
           <div className="bg-gradient-to-r from-teal-800 to-teal-600 p-4 text-white flex justify-between items-center shadow-inner">
             <h4 className="font-bold text-lg">🚢 الشحن البحري</h4>
-            <span className="text-[10px] bg-white/20 px-2 py-1 rounded-lg">السعر لكل CBM</span>
           </div>
-          <div className="p-5 space-y-3">
+          <div className="p-5">
             <div className="flex justify-between items-center">
               <span className="text-xs font-bold text-gray-500">تصنيف عادي 📦</span>
               <span className="font-black text-teal-700 text-base">158.5 $</span>
