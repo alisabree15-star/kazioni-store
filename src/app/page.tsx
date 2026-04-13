@@ -157,10 +157,16 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50 text-right font-sans text-black pb-32" dir="rtl">
-      <nav className="bg-blue-900 text-white p-5 shadow-lg sticky top-0 z-50 flex justify-between items-center">
+      {/* الشريط العلوي مع اللوجو */}
+      <nav className="bg-blue-900 text-white p-4 shadow-lg sticky top-0 z-50 flex justify-between items-center">
         <div>
           <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
           <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest text-white">التجارة والشحن الدولي</p>
+        </div>
+        
+        {/* مكان اللوجو في الجهة اليسرى */}
+        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1 shadow-md border-2 border-amber-500 overflow-hidden">
+          <img src="/images/logo.png" alt="لوجو الحاج كزيوني" className="max-w-full max-h-full object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
         </div>
       </nav>
 
