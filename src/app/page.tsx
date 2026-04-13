@@ -106,7 +106,7 @@ export default function Home() {
     { id: 7, name: "ماكينة بيتزا موديل 2025 🔥", img: "/images/product7.jpg", price: "430 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن جوي سريع ✈️)", description: "ماكينة بيتزا تجارية حديثة، مصممة خصيصاً للمطاعم والمقاهي. توفر توزيعاً حرارياً متساوياً لخبز مثالي وسريع.", moq: "1 قطعة", cbm: "0.150", weight: "35" },
     { id: 8, name: "ماكينة التنظيف بالثلج الجاف 👀", img: "/images/product8.jpg", price: "1400 $", pColor: "text-amber-600", shippingNote: "شامل الشحن والعمولة إلى ليبيا (شحن بحري فقط 🚢)", description: "ماكينة تنظيف صناعية متطورة بتقنية الثلج الجاف (Dry Ice Blasting) من Crodium. حل مثالي لتنظيف المحركات وإزالة الشحوم الكربونية.", moq: "1 قطعة", cbm: "0.450", weight: "75" },
     { id: 9, name: "آلة رحي الحبوب المميزة 🥜", img: "/images/product9.jpg", price: "225 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "آلة رحي وتنعيم تجارية من الستانلس ستيل المقاوم للصدأ. مصممة خصيصاً لطحن الحبوب وصنع المعاجين مثل زبدة الفول السوداني والطحينة بكفاءة عالية.", moq: "1 قطعة", cbm: "0.090", weight: "30" },
-    { id: 10, name: "آلة صنع المثلجات (جيلاطي المفترش ❤️)", img: "/images/product10.jpg", price: "400 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "أبهر زبائنك بعروض الآيس كريم المقلي (جيلاطي المفترش) الطازجة والمبتكرة. تتميز هذه الآلة المكتبية المدمجة بسطح تجميد مسطح ومصقول من الستانلس ستيل المقاوم للصدأ، مما يضمن أداءً تجميدياً فائق السرعة لصنع لفائف الآيس كريم (Rolled Ice Cream) المثالية في ثوانٍ معدودة. هيكل قوي ومتين، سهل التنظيف والتشغيل، ومثالي لإضافة لمسة فنية لمقهاك أو محل الحلوى الخاص بك.", moq: "1 قطعة", cbm: "0.100", weight: "25" }
+    { id: 10, name: "آلة صنع المثلجات (جيلاطي المفترش ❤️)", img: "/images/product10.jpg", price: "400 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "أبهر زبائنك بعروض الآيس كريم المقلي (جيلاطي المفترش) الطازجة والمبتكرة. تتميز هذه الآلة المكتبية المدمجة بسطح تجميد مسطح ومصقول من الستانلس ستيل المقاوم للصدأ، مما يضمن أداءً تجميدياً فائق السرعة.", moq: "1 قطعة", cbm: "0.100", weight: "25" }
   ];
 
   if (selectedProduct) {
@@ -153,6 +153,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50 text-right font-sans text-black pb-32 relative" dir="rtl">
+      {/* 1. الشريط العلوي */}
       <nav className="bg-blue-900 text-white p-4 shadow-xl sticky top-0 z-40 flex justify-between items-center border-b-4 border-amber-500">
         <div>
           <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
@@ -163,6 +164,7 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* مودال السلة */}
       {isCartOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 flex justify-end">
           <div className="w-[85%] max-w-md bg-gray-50 h-full flex flex-col shadow-2xl animate-slide-in">
@@ -206,7 +208,62 @@ export default function Home() {
         </div>
       )}
 
+      {/* 2. أسعار الشحن (عادت للأعلى) */}
       <section className="p-6 max-w-md mx-auto mt-2 text-black">
+        <div className="flex justify-between items-center mb-4 gap-2">
+          <h3 className="text-[16px] leading-tight font-black text-gray-800 border-r-4 border-blue-900 pr-3">أسعار الشحن من الصين 🇨🇳 إلى ليبيا 🇱🇾</h3>
+          <span className="bg-amber-100 text-amber-800 text-[10px] font-black px-2 py-1 rounded-full shadow-sm whitespace-nowrap">أبريل 2026</span>
+        </div>
+
+        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 mb-4 overflow-hidden duration-300">
+          <button onClick={() => setIsAirOpen(!isAirOpen)} className="w-full bg-gradient-to-r from-blue-900 to-blue-700 p-4 text-white flex justify-between items-center shadow-inner focus:outline-none">
+            <h4 className="font-bold text-lg text-white">✈️ الشحن الجوي</h4>
+            <span className="text-lg text-white">{isAirOpen ? '🔼' : '🔽'}</span>
+          </button>
+          {isAirOpen && (
+            <div className="p-5 space-y-3 bg-blue-50/50 border-t border-blue-100 font-bold text-black">
+              <div className="flex justify-between border-b pb-2"><span>عادي (1-100 كجم)</span><span className="text-blue-800">9.25 $</span></div>
+              <div className="flex justify-between border-b pb-2"><span>عادي (100-250 كجم)</span><span className="text-blue-800">9.10 $</span></div>
+              <div className="flex justify-between border-b pb-2"><span>عادي (250-500 كجم)</span><span className="text-blue-800">9.00 $</span></div>
+              <div className="flex justify-between border-b pb-2"><span>بضاعة كوبي 👜</span><span className="text-orange-600">9.40 $</span></div>
+              <div className="flex justify-between border-b pb-2"><span>كوزماتك 💄</span><span className="text-orange-600">9.50 $</span></div>
+              <div className="flex justify-between"><span>بضاعة طبية 🩺</span><span className="text-red-600">10.50 $</span></div>
+            </div>
+          )}
+        </div>
+
+        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden duration-300">
+          <button onClick={() => setIsSeaOpen(!isSeaOpen)} className="w-full bg-gradient-to-r from-teal-800 to-teal-600 p-4 text-white flex justify-between items-center shadow-inner focus:outline-none">
+            <h4 className="font-bold text-lg text-white">🚢 الشحن البحري</h4>
+            <span className="text-lg text-white">{isSeaOpen ? '🔼' : '🔽'}</span>
+          </button>
+          {isSeaOpen && (
+            <div className="p-5 space-y-3 bg-teal-50/50 border-t border-teal-100 font-bold text-black">
+              <div className="flex justify-between border-b pb-2 text-black"><span>تصنيف عادي 📦</span><span className="text-teal-800">158.5 $ <span className="text-[10px] text-gray-500">/ CBM</span></span></div>
+              <div className="flex justify-between border-b pb-2 text-black"><span>ماركة كوبي 👕</span><span className="text-orange-600">168.5 $ <span className="text-[10px] text-gray-500">/ CBM</span></span></div>
+              <div className="flex justify-between text-black"><span>كوزماتك 🧴</span><span className="text-orange-600">178.5 $ <span className="text-[10px] text-gray-500">/ CBM</span></span></div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* 3. حاسبة الحجم (عادت للأعلى) */}
+      <section className="p-6 max-w-md mx-auto pt-0 text-black">
+        <div className="bg-white rounded-3xl p-6 shadow-xl border-t-8 border-teal-700">
+          <h3 className="text-lg font-black text-teal-800 mb-2 flex items-center tracking-tight text-black text-black">🧮 حاسبة الحجم (CBM)</h3>
+          <div className="grid grid-cols-2 gap-3 mb-4 text-black text-black">
+            <input type="number" value={dims.length} onChange={(e)=>setDims({...dims, length: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-sm outline-none text-black" placeholder="الطول cm"/>
+            <input type="number" value={dims.width} onChange={(e)=>setDims({...dims, width: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-sm outline-none text-black" placeholder="العرض cm"/>
+            <input type="number" value={dims.height} onChange={(e)=>setDims({...dims, height: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-sm outline-none text-black" placeholder="الارتفاع cm"/>
+            <input type="number" value={dims.qty} onChange={(e)=>setDims({...dims, qty: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-sm outline-none text-black" placeholder="العدد"/>
+          </div>
+          <button onClick={calculateCBM} className="w-full bg-teal-700 text-white py-4 rounded-xl font-black shadow-lg">احسب الآن</button>
+          {result !== null && <div className="mt-4 bg-teal-50 border-2 border-teal-100 p-4 rounded-2xl text-center text-3xl font-black text-teal-900">{result} CBM</div>}
+        </div>
+      </section>
+
+      {/* 4. المنتجات والكتالوج (في الأسفل) */}
+      <section className="p-6 max-w-md mx-auto pt-2 text-black">
         <h3 className="text-xl font-bold text-gray-800 mb-4 border-r-4 border-orange-500 pr-3 text-black">المنتجات (الكتالوج) 🇨🇳</h3>
         <div className="grid grid-cols-2 gap-4">
           {products.map((product) => (
@@ -223,20 +280,6 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="p-6 max-w-md mx-auto pt-0 text-black pb-12">
-        <div className="bg-white rounded-3xl p-5 shadow-sm border border-gray-100">
-          <h3 className="text-sm font-black text-teal-800 mb-3 flex items-center">🧮 حاسبة الحجم اليدوية (CBM)</h3>
-          <div className="grid grid-cols-2 gap-2 mb-3">
-            <input type="number" value={dims.length} onChange={(e)=>setDims({...dims, length: e.target.value})} className="bg-gray-50 border border-gray-200 rounded p-2 text-center text-xs outline-none" placeholder="الطول cm"/>
-            <input type="number" value={dims.width} onChange={(e)=>setDims({...dims, width: e.target.value})} className="bg-gray-50 border border-gray-200 rounded p-2 text-center text-xs outline-none" placeholder="العرض cm"/>
-            <input type="number" value={dims.height} onChange={(e)=>setDims({...dims, height: e.target.value})} className="bg-gray-50 border border-gray-200 rounded p-2 text-center text-xs outline-none" placeholder="الارتفاع cm"/>
-            <input type="number" value={dims.qty} onChange={(e)=>setDims({...dims, qty: e.target.value})} className="bg-gray-50 border border-gray-200 rounded p-2 text-center text-xs outline-none" placeholder="العدد"/>
-          </div>
-          <button onClick={calculateCBM} className="w-full bg-teal-700 text-white py-2 rounded font-bold text-sm">احسب</button>
-          {result !== null && <div className="mt-3 text-center text-lg font-black text-teal-900">{result} CBM</div>}
         </div>
       </section>
 
