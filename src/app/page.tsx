@@ -163,16 +163,16 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50 text-right font-sans text-black pb-32" dir="rtl">
-      {/* الشريط العلوي مع اللوجو بحجم كبير وبدون إطار مع كسر الذاكرة المؤقتة v=2 */}
-      <nav className="bg-blue-900 text-white p-4 shadow-lg sticky top-0 z-50 flex justify-between items-center">
+      {/* الشريط العلوي مع اللوجو بالتصميم الذهبي الفخم */}
+      <nav className="bg-blue-900 text-white p-4 shadow-xl sticky top-0 z-50 flex justify-between items-center border-b-4 border-amber-500">
         <div>
           <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
-          <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest text-white">التجارة والشحن الدولي</p>
+          <p className="text-[10px] text-amber-300 font-bold uppercase tracking-widest">التجارة والشحن الدولي</p>
         </div>
         
-        {/* اللوجو: تم إزالة الخلفية البيضاء كلياً من الكود */}
-        <div className="flex items-center justify-center">
-          <img src="/images/logo.png?v=2" alt="لوجو الحاج كزيوني" className="h-16 w-auto max-w-[80px] object-contain drop-shadow-lg" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+        {/* تصميم اللوجو الجديد: مربع دائري بلون ذهبي متدرج يذيب الخلفية البيضاء */}
+        <div className="w-14 h-14 bg-gradient-to-tr from-amber-500 to-yellow-300 rounded-xl flex items-center justify-center shadow-lg border-2 border-white overflow-hidden p-1">
+          <img src="/images/logo.png?v=4" alt="لوجو الحاج كزيوني" className="w-full h-full object-contain mix-blend-multiply opacity-90" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
         </div>
       </nav>
 
