@@ -90,7 +90,7 @@ export default function Home() {
     },
     { 
       id: 5, 
-      name: "ماكينة حرارية احترافية ✨", 
+      name: "ماكينه طباعه حراريه محموله ✨", 
       img: "/images/product5.jpg", 
       price: "75 $", 
       pColor: "text-amber-600",
