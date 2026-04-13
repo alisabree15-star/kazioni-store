@@ -115,6 +115,18 @@ export default function Home() {
       moq: "10 قطع",
       cbm: "0.025",
       weight: "5.5"
+    },
+    { 
+      id: 7, 
+      name: "منتج جديد 7 ✨", 
+      img: "/images/product7.jpg", 
+      price: "تواصل للسعر", 
+      pColor: "text-amber-600",
+      shippingNote: "السعر لا يشمل الشحن",
+      description: "سيتم إضافة تفاصيل هذا المنتج قريباً.",
+      moq: "تواصل لمعرفة الكمية",
+      cbm: "0.000",
+      weight: "0.0"
     }
   ];
 
