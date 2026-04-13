@@ -79,6 +79,15 @@ export default function Home() {
       pColor: "text-amber-600",
       description: "سلة ذكية تعمل بالحساسات، تصميم عصري وأنيق يتناسب مع المكاتب والمحلات الكبرى، نظام إغلاق محكم لمنع الروائح.",
       moq: "10 قطع"
+    },
+    { 
+      id: 5, 
+      name: "منتج جديد 5 ✨", 
+      img: "/images/product5.jpg", 
+      price: "تواصل للسعر", 
+      pColor: "text-amber-600",
+      description: "سيتم إضافة تفاصيل هذا المنتج قريباً.",
+      moq: "تواصل لمعرفة الكمية"
     }
   ];
 
@@ -226,7 +235,7 @@ export default function Home() {
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col cursor-pointer" onClick={() => setSelectedProduct(product)}>
               <div className="h-40 bg-gray-50 flex items-center justify-center p-2">
-                <img src={product.img} alt={product.name} className="max-h-full max-w-full object-contain" />
+                <img src={product.img} alt={product.name} className="max-h-full max-w-full object-contain" onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/150?text=H.K+Store"; }} />
               </div>
               <div className="p-3 flex-1 flex flex-col justify-between text-center">
                 <h4 className="font-bold text-[11px] text-black mb-1 leading-tight">{product.name}</h4>
