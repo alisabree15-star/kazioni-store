@@ -118,15 +118,15 @@ export default function Home() {
     },
     { 
       id: 7, 
-      name: "منتج جديد 7 ✨", 
+      name: "ماكينة بيتزا موديل 2025 🔥", 
       img: "/images/product7.jpg", 
-      price: "تواصل للسعر", 
+      price: "430 $", 
       pColor: "text-amber-600",
-      shippingNote: "السعر لا يشمل الشحن",
-      description: "سيتم إضافة تفاصيل هذا المنتج قريباً.",
-      moq: "تواصل لمعرفة الكمية",
-      cbm: "0.000",
-      weight: "0.0"
+      shippingNote: "السعر شامل الشحن والعمولة (شحن جوي سريع ✈️)",
+      description: "ماكينة بيتزا تجارية حديثة، مصممة خصيصاً للمطاعم والمقاهي. توفر توزيعاً حرارياً متساوياً لخبز مثالي وسريع، مع واجهة تحكم دقيقة في درجات الحرارة وهيكل متين من الستانلس ستيل المقاوم للصدأ لضمان عمر افتراضي طويل وأداء لا يعلى عليه.",
+      moq: "1 قطعة",
+      cbm: "0.150",
+      weight: "35"
     }
   ];
 
@@ -142,7 +142,7 @@ export default function Home() {
           <span className="bg-amber-100 text-amber-800 text-[10px] font-bold px-3 py-1 rounded-full text-black">منتج حصري 🇨🇳</span>
           <h2 className="text-2xl font-black mt-3 mb-1 leading-tight text-black">{selectedProduct.name}</h2>
           <p className={"text-xl font-black mb-1 " + selectedProduct.pColor}>{selectedProduct.price}</p>
-          <p className="text-[11px] font-bold text-red-600 mb-4">{selectedProduct.shippingNote}</p>
+          <p className={"text-[11px] font-bold mb-4 " + (selectedProduct.shippingNote.includes("شامل") ? "text-red-600" : "text-gray-500")}>{selectedProduct.shippingNote}</p>
           
           <div className="bg-gray-50 rounded-2xl p-4 mb-6 text-black border border-gray-100">
             <h4 className="font-bold text-sm mb-3 text-blue-900 underline">تفاصيل الشحن والطلب:</h4>
@@ -256,7 +256,7 @@ export default function Home() {
                 <div>
                   <h4 className="font-bold text-[11px] text-black mb-1 leading-tight text-black">{product.name}</h4>
                   <p className={"font-black text-xs " + product.pColor}>{product.price}</p>
-                  <p className={"text-[8px] font-bold mt-0.5 leading-none " + (product.id === 2 || product.id === 3 ? "text-red-600" : "text-gray-400")}>{product.shippingNote}</p>
+                  <p className={"text-[8px] font-bold mt-0.5 leading-none " + (product.shippingNote.includes("شامل") ? "text-red-600" : "text-gray-400")}>{product.shippingNote}</p>
                 </div>
                 <button className="bg-gray-100 text-gray-800 text-[9px] py-1 mt-3 rounded-md font-bold">التفاصيل ←</button>
               </div>
