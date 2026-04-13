@@ -11,7 +11,6 @@ export default function Home() {
   
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   
-  // حالة التحكم في فتح وإغلاق قوائم الشحن
   const [isAirOpen, setIsAirOpen] = useState(false);
   const [isSeaOpen, setIsSeaOpen] = useState(false);
 
@@ -128,14 +127,12 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* قسم أسعار الشحن القابل للطي */}
       <section className="p-6 max-w-md mx-auto mt-2">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-black text-gray-800 border-r-4 border-blue-900 pr-3">أسعار الشحن 📦</h3>
           <span className="bg-amber-100 text-amber-800 text-[10px] font-black px-3 py-1 rounded-full shadow-sm">تحديث: أبريل 2026</span>
         </div>
 
-        {/* كارت الشحن الجوي */}
         <div className="bg-white rounded-3xl shadow-lg border border-gray-100 mb-4 overflow-hidden transition-all duration-300">
           <button onClick={() => setIsAirOpen(!isAirOpen)} className="w-full bg-gradient-to-r from-blue-900 to-blue-700 p-4 text-white flex justify-between items-center shadow-inner focus:outline-none active:scale-[0.98] transition-transform">
             <h4 className="font-bold text-lg flex items-center">✈️ الشحن الجوي</h4>
@@ -175,7 +172,6 @@ export default function Home() {
           )}
         </div>
 
-        {/* كارت الشحن البحري */}
         <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300">
           <button onClick={() => setIsSeaOpen(!isSeaOpen)} className="w-full bg-gradient-to-r from-teal-800 to-teal-600 p-4 text-white flex justify-between items-center shadow-inner focus:outline-none active:scale-[0.98] transition-transform">
             <h4 className="font-bold text-lg flex items-center">🚢 الشحن البحري</h4>
