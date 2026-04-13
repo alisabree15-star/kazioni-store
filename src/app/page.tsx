@@ -163,16 +163,16 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50 text-right font-sans text-black pb-32" dir="rtl">
-      {/* الشريط العلوي مع اللوجو بحجم كبير وبدون إطار */}
+      {/* الشريط العلوي مع اللوجو بحجم كبير وبدون إطار مع كسر الذاكرة المؤقتة v=2 */}
       <nav className="bg-blue-900 text-white p-4 shadow-lg sticky top-0 z-50 flex justify-between items-center">
         <div>
           <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
           <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest text-white">التجارة والشحن الدولي</p>
         </div>
         
-        {/* اللوجو الجديد: كبير، شفاف، وبدون أي حدود */}
+        {/* اللوجو: تم إزالة الخلفية البيضاء كلياً من الكود */}
         <div className="flex items-center justify-center">
-          <img src="/images/logo.png" alt="لوجو الحاج كزيوني" className="h-16 w-auto max-w-[80px] object-contain drop-shadow-md" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+          <img src="/images/logo.png?v=2" alt="لوجو الحاج كزيوني" className="h-16 w-auto max-w-[80px] object-contain drop-shadow-lg" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
         </div>
       </nav>
 
