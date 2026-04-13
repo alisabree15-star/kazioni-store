@@ -154,9 +154,9 @@ export default function Home() {
       </nav>
 
       <section className="p-6 max-w-md mx-auto mt-2">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-black text-gray-800 border-r-4 border-blue-900 pr-3">أسعار الشحن 📦</h3>
-          <span className="bg-amber-100 text-amber-800 text-[10px] font-black px-3 py-1 rounded-full shadow-sm">تحديث: أبريل 2026</span>
+        <div className="flex justify-between items-center mb-4 gap-2">
+          <h3 className="text-[16px] leading-tight font-black text-gray-800 border-r-4 border-blue-900 pr-3">أسعار الشحن من الصين 🇨🇳 إلى ليبيا 🇱🇾</h3>
+          <span className="bg-amber-100 text-amber-800 text-[10px] font-black px-2 py-1 rounded-full shadow-sm whitespace-nowrap">أبريل 2026</span>
         </div>
 
         <div className="bg-white rounded-3xl shadow-lg border border-gray-100 mb-4 overflow-hidden">
