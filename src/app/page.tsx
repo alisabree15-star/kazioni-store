@@ -55,6 +55,64 @@ export default function Home() {
       cbm: "0.002",
       weight: "0.3"
     },
+cat << 'EOF' > ~/kazioni-swivel-store/src/app/page.tsx
+"use client";
+import { useState } from 'react';
+
+export default function Home() {
+  const whatsappNumber = "218915044855"; 
+  const siteUrl = "https://kazioni-store.vercel.app";
+  
+  const [dims, setDims] = useState({ length: '', width: '', height: '', qty: '1' });
+  const [result, setResult] = useState<number | null>(null);
+  const [copyMsg, setCopyMsg] = useState(false);
+  
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  
+  const [isAirOpen, setIsAirOpen] = useState(false);
+  const [isSeaOpen, setIsSeaOpen] = useState(false);
+
+  const calculateCBM = () => {
+    const l = parseFloat(dims.length);
+    const w = parseFloat(dims.width);
+    const h = parseFloat(dims.height);
+    const q = parseInt(dims.qty);
+    if (l && w && h) {
+      const cbm = (l * w * h * q) / 1000000;
+      setResult(parseFloat(cbm.toFixed(3)));
+    }
+  };
+
+  const shareSite = async () => {
+    const text = selectedProduct 
+      ? `شاهد تفاصيل ${selectedProduct.name} عبر موقعنا` 
+      : 'شاهد أحدث المنتجات واحسب شحنتك عبر موقعنا الرسمي';
+    
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: 'الحاج كزيوني & Swivel', text: text, url: siteUrl });
+      } catch (err) { copyToClipboard(); }
+    } else { copyToClipboard(); }
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(siteUrl);
+    setCopyMsg(true);
+    setTimeout(() => setCopyMsg(false), 3000);
+  };
+
+  const products = [
+    { 
+      id: 1, 
+      name: "لوحة مفاتيح للهواتف محمولة (للمتاجر)", 
+      img: "/images/product1.jpg", 
+      price: "30 $", 
+      pColor: "text-amber-600",
+      description: "لوحة مفاتيح احترافية مصممة للهواتف، تدعم الربط السريع لتسهيل عمليات البيع.",
+      moq: "10 قطع",
+      cbm: "0.002",
+      weight: "0.3"
+    },
     { 
       id: 2, 
       name: "ماكينة تجفيف الفواكه بالتبريد", 
@@ -101,14 +159,14 @@ export default function Home() {
     },
     { 
       id: 6, 
-      name: "منتج جديد 6 ✨", 
+      name: "الة عصر البرتقال والفواكه ( للمتاجر )", 
       img: "/images/product6.jpg", 
-      price: "تواصل للسعر", 
+      price: "25 $", 
       pColor: "text-amber-600",
-      description: "سيتم إضافة تفاصيل هذا المنتج قريباً.",
-      moq: "تواصل لمعرفة الكمية",
-      cbm: "0.00",
-      weight: "0.0"
+      description: "آلة عصر احترافية وعملية، مصممة لتحمل الاستخدام المستمر في المتاجر والمقاهي. تضمن استخلاص العصير بسرعة وكفاءة عالية.",
+      moq: "10 قطع",
+      cbm: "0.025",
+      weight: "5.5"
     }
   ];
 
