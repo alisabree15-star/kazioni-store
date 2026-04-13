@@ -15,7 +15,6 @@ export default function Home() {
   const [isAirOpen, setIsAirOpen] = useState(false);
   const [isSeaOpen, setIsSeaOpen] = useState(false);
 
-  // نظام سلة المشتريات الجديد
   const [cart, setCart] = useState<any[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -93,7 +92,6 @@ export default function Home() {
     msg += `🔹 الحجم الإجمالي: ${cartTotalCBM.toFixed(3)} CBM\n`;
     msg += `🔹 الوزن الإجمالي: ${cartTotalWeight.toFixed(2)} KG\n\n`;
     msg += "الرجاء تأكيد الطلب وحساب تكلفة الشحن النهائية. شكراً لك.";
-
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
   };
@@ -106,7 +104,8 @@ export default function Home() {
     { id: 5, name: "ماكينه طباعه حراريه محموله ✨", img: "/images/product5.jpg", price: "75 $", pColor: "text-amber-600", shippingNote: "السعر لا يشمل الشحن", description: "ماكينة حرارية متطورة متعددة الاستخدامات، دقة عالية في الأداء وكفاءة في استهلاك الطاقة.", moq: "10 قطع", cbm: "0.150", weight: "23" },
     { id: 6, name: "الة عصر البرتقال والفواكه ( للمتاجر )", img: "/images/product6.jpg", price: "25 $", pColor: "text-amber-600", shippingNote: "السعر لا يشمل الشحن", description: "آلة عصر احترافية وعملية، مصممة لتحمل الاستخدام المستمر في المتاجر والمقاهي. تضمن استخلاص العصير بسرعة وكفاءة عالية.", moq: "10 قطع", cbm: "0.025", weight: "5.5" },
     { id: 7, name: "ماكينة بيتزا موديل 2025 🔥", img: "/images/product7.jpg", price: "430 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن جوي سريع ✈️)", description: "ماكينة بيتزا تجارية حديثة، مصممة خصيصاً للمطاعم والمقاهي. توفر توزيعاً حرارياً متساوياً لخبز مثالي وسريع.", moq: "1 قطعة", cbm: "0.150", weight: "35" },
-    { id: 8, name: "ماكينة التنظيف بالثلج الجاف 👀", img: "/images/product8.jpg", price: "1400 $", pColor: "text-amber-600", shippingNote: "شامل الشحن والعمولة إلى ليبيا (شحن بحري فقط 🚢)", description: "ماكينة تنظيف صناعية متطورة بتقنية الثلج الجاف (Dry Ice Blasting) من Crodium. حل مثالي لتنظيف المحركات وإزالة الشحوم الكربونية.", moq: "1 قطعة", cbm: "0.450", weight: "75" }
+    { id: 8, name: "ماكينة التنظيف بالثلج الجاف 👀", img: "/images/product8.jpg", price: "1400 $", pColor: "text-amber-600", shippingNote: "شامل الشحن والعمولة إلى ليبيا (شحن بحري فقط 🚢)", description: "ماكينة تنظيف صناعية متطورة بتقنية الثلج الجاف (Dry Ice Blasting) من Crodium. حل مثالي لتنظيف المحركات وإزالة الشحوم الكربونية.", moq: "1 قطعة", cbm: "0.450", weight: "75" },
+    { id: 9, name: "آلة رحي الحبوب المميزة 🥜", img: "/images/product9.jpg", price: "225 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "آلة رحي وتنعيم تجارية من الستانلس ستيل المقاوم للصدأ. مصممة خصيصاً لطحن الحبوب وصنع المعاجين مثل زبدة الفول السوداني والطحينة بكفاءة عالية. تتميز بقادوس واسع ومحرك قوي يتحمل ضغط العمل المستمر، مما يجعلها الخيار المثالي للمحامص والمشاريع الإنتاجية.", moq: "1 قطعة", cbm: "0.090", weight: "30" }
   ];
 
   if (selectedProduct) {
@@ -116,13 +115,11 @@ export default function Home() {
           <button onClick={() => setSelectedProduct(null)} className="absolute top-6 right-6 bg-white/80 w-10 h-10 rounded-full shadow-lg flex items-center justify-center font-bold z-10 text-black">✕</button>
           <img src={selectedProduct.img} className="max-h-full object-contain" onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/150?text=Kazioni+Store"; }} />
         </div>
-        
         <div className="p-6">
           <span className="bg-amber-100 text-amber-800 text-[10px] font-bold px-3 py-1 rounded-full text-black">منتج حصري 🇨🇳</span>
           <h2 className="text-2xl font-black mt-3 mb-1 leading-tight text-black">{selectedProduct.name}</h2>
           <p className={"text-xl font-black mb-1 " + selectedProduct.pColor}>{selectedProduct.price}</p>
           <p className={"text-[11px] font-bold mb-4 " + (selectedProduct.shippingNote.includes("شامل") ? "text-red-600" : "text-gray-500")}>{selectedProduct.shippingNote}</p>
-          
           <div className="bg-gray-50 rounded-2xl p-4 mb-4 text-black border border-gray-100">
             <h4 className="font-bold text-sm mb-3 text-blue-900 underline">تفاصيل الشحن والطلب:</h4>
             <div className="grid grid-cols-2 gap-2 mb-4">
@@ -134,8 +131,6 @@ export default function Home() {
               <span className="text-xs font-bold text-gray-500">أقل كمية للطلب:</span><span className="text-sm font-black text-red-600">{selectedProduct.moq}</span>
             </div>
           </div>
-
-          {/* نظام تحديد الكمية والإضافة للسلة */}
           <div className="bg-white border-2 border-amber-200 rounded-2xl p-4 mb-6 shadow-md">
             <div className="flex justify-between items-center mb-4">
               <span className="font-bold text-sm text-gray-800">حدد الكمية المطلوبة:</span>
@@ -149,7 +144,6 @@ export default function Home() {
               <span>🛍️</span> أضف إلى السلة
             </button>
           </div>
-          
           <a href={"https://wa.me/" + whatsappNumber + "?text=استفسار سريع عن " + selectedProduct.name} className="block w-full bg-gray-100 text-gray-800 py-3 rounded-xl font-bold text-center border border-gray-300">تواصل لاستفسار سريع 💬</a>
         </div>
       </main>
@@ -168,7 +162,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* مودال السلة الجانبي */}
       {isCartOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 flex justify-end">
           <div className="w-[85%] max-w-md bg-gray-50 h-full flex flex-col shadow-2xl animate-slide-in">
@@ -260,7 +253,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* الشريط السفلي العائم (مشاركة + سلة تسوق) */}
       <div className="fixed bottom-4 left-4 right-4 max-w-md mx-auto z-40 flex gap-2">
         <button onClick={shareSite} className="w-14 h-14 bg-black text-white rounded-2xl flex items-center justify-center shadow-2xl border border-gray-700 active:scale-95 transition-all text-xl">📤</button>
         <button onClick={() => setIsCartOpen(true)} className="flex-1 bg-amber-500 text-black py-4 rounded-2xl font-black shadow-2xl flex items-center justify-center gap-2 active:scale-95 transition-all relative border-2 border-amber-600">
