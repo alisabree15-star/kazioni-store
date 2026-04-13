@@ -50,7 +50,7 @@ export default function Home() {
       img: "/images/product1.jpg", 
       price: "30 $", 
       pColor: "text-amber-600",
-      description: "لوحة مفاتيح احترافية مصممة للهواتف، تدعم الربط السريع لتسهيل عمليات البيع.",
+      description: "لوحة مفاتيح احترافية مصممة للهواتف، تدعم الربط السريع لتسهيل عمليات البيع والرد على الزبائن.",
       moq: "10 قطع",
       cbm: "0.002",
       weight: "0.3"
@@ -61,7 +61,7 @@ export default function Home() {
       img: "/images/product2.jpg", 
       price: "1850 $", 
       pColor: "text-amber-600",
-      description: "أحدث تقنيات التجفيف بالتبريد للحفاظ على القيمة الغذائية للفواكه. مثالية للمشاريع الناشئة.",
+      description: "أحدث تقنيات التجفيف بالتبريد للحفاظ على القيمة الغذائية للفواكه. مثالية للمشاريع الغذائية الناشئة.",
       moq: "1 ماكينة",
       cbm: "0.680",
       weight: "80"
@@ -72,7 +72,7 @@ export default function Home() {
       img: "/images/product3.jpg", 
       price: "850 $", 
       pColor: "text-amber-600",
-      description: "ماكينة آلية بالكامل لإنتاج الفطائر والتورتيلا بجودة عالية وسرعة فائقة.",
+      description: "ماكينة آلية بالكامل لإنتاج الفطائر والتورتيلا بجودة عالية وسرعة فائقة، سهلة الاستخدام والتنظيف.",
       moq: "1 ماكينة",
       cbm: "0.130",
       weight: "60"
@@ -83,7 +83,7 @@ export default function Home() {
       img: "/images/product4.jpg", 
       price: "50 $", 
       pColor: "text-amber-600",
-      description: "سلة ذكية تعمل بالحساسات، تصميم عصري وأنيق يتناسب مع المكاتب والمحلات الكبرى.",
+      description: "سلة ذكية تعمل بالحساسات، تصميم عصري وأنيق يتناسب مع المكاتب والمحلات الكبرى، نظام إغلاق محكم لمنع الروائح.",
       moq: "10 قطع",
       cbm: "0.090",
       weight: "4"
@@ -117,8 +117,9 @@ export default function Home() {
       <main className="min-h-screen bg-white text-right font-sans text-black pb-24" dir="rtl">
         <div className="relative h-80 bg-gray-100 flex items-center justify-center p-4">
           <button onClick={() => setSelectedProduct(null)} className="absolute top-6 right-6 bg-white/80 w-10 h-10 rounded-full shadow-lg flex items-center justify-center font-bold z-10 text-black">✕</button>
-          <img src={selectedProduct.img} className="max-h-full object-contain" />
+          <img src={selectedProduct.img} className="max-h-full object-contain" onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/150?text=Kazioni+Store"; }} />
         </div>
+        
         <div className="p-6">
           <span className="bg-amber-100 text-amber-800 text-[10px] font-bold px-3 py-1 rounded-full text-black">منتج حصري 🇨🇳</span>
           <h2 className="text-2xl font-black mt-3 mb-2 leading-tight text-black">{selectedProduct.name}</h2>
@@ -146,10 +147,15 @@ export default function Home() {
             </div>
           </div>
 
-          <a href={"https://wa.me/" + whatsappNumber + "?text=استفسار عن " + selectedProduct.name} className="block w-full bg-green-500 text-white py-4 rounded-2xl font-bold text-center shadow-lg active:scale-95 transition-all">تواصل للحجز والطلب الآن 💬</a>
+          <a href={"https://wa.me/" + whatsappNumber + "?text=استفسار عن " + selectedProduct.name} className="block w-full bg-green-500 text-white py-4 rounded-2xl font-bold text-center shadow-lg active:scale-95 transition-all">
+            تواصل للحجز والطلب الآن 💬
+          </a>
         </div>
+
         <div className="fixed bottom-6 left-6 right-6 max-w-md mx-auto z-50">
-          <button onClick={shareSite} className="w-full bg-black text-white py-4 rounded-full font-bold shadow-2xl flex items-center justify-center gap-2 border border-gray-700 text-sm"><span>📤</span> مشاركة رابط المنتج</button>
+          <button onClick={shareSite} className="w-full bg-black text-white py-4 rounded-full font-bold shadow-2xl flex items-center justify-center gap-2 border border-gray-700 text-sm">
+            <span>📤</span> مشاركة رابط هذا المنتج
+          </button>
         </div>
       </main>
     );
@@ -176,11 +182,12 @@ export default function Home() {
           <span className="bg-amber-100 text-amber-800 text-[10px] font-black px-2 py-1 rounded-full shadow-sm whitespace-nowrap">أبريل 2026</span>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 mb-4 overflow-hidden">
+        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 mb-4 overflow-hidden duration-300">
           <button onClick={() => setIsAirOpen(!isAirOpen)} className="w-full bg-gradient-to-r from-blue-900 to-blue-700 p-4 text-white flex justify-between items-center shadow-inner focus:outline-none">
             <h4 className="font-bold text-lg text-white">✈️ الشحن الجوي</h4>
             <span className="text-lg text-white">{isAirOpen ? '🔼' : '🔽'}</span>
           </button>
+          
           {isAirOpen && (
             <div className="p-5 space-y-3 bg-blue-50/50 border-t border-blue-100 font-bold text-black">
               <div className="flex justify-between border-b pb-2"><span>عادي (1-100 كجم)</span><span className="text-blue-800">9.25 $</span></div>
@@ -193,11 +200,12 @@ export default function Home() {
           )}
         </div>
 
-        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden duration-300">
           <button onClick={() => setIsSeaOpen(!isSeaOpen)} className="w-full bg-gradient-to-r from-teal-800 to-teal-600 p-4 text-white flex justify-between items-center shadow-inner focus:outline-none">
             <h4 className="font-bold text-lg text-white">🚢 الشحن البحري</h4>
             <span className="text-lg text-white">{isSeaOpen ? '🔼' : '🔽'}</span>
           </button>
+          
           {isSeaOpen && (
             <div className="p-5 space-y-3 bg-teal-50/50 border-t border-teal-100 font-bold text-black">
               <div className="flex justify-between border-b pb-2"><span>تصنيف عادي 📦</span><span className="text-teal-800">158.5 $ <span className="text-[10px] text-gray-500">/ CBM</span></span></div>
@@ -211,7 +219,7 @@ export default function Home() {
       <section className="p-6 max-w-md mx-auto pt-0 text-black">
         <div className="bg-white rounded-3xl p-6 shadow-xl border-t-8 border-teal-700">
           <h3 className="text-lg font-black text-teal-800 mb-2 flex items-center tracking-tight">🧮 حاسبة الحجم (CBM)</h3>
-          <div className="grid grid-cols-2 gap-3 mb-4">
+          <div className="grid grid-cols-2 gap-3 mb-4 text-black text-black">
             <input type="number" value={dims.length} onChange={(e)=>setDims({...dims, length: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-sm outline-none text-black" placeholder="الطول cm"/>
             <input type="number" value={dims.width} onChange={(e)=>setDims({...dims, width: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-sm outline-none text-black" placeholder="العرض cm"/>
             <input type="number" value={dims.height} onChange={(e)=>setDims({...dims, height: e.target.value})} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center font-bold text-sm outline-none text-black" placeholder="الارتفاع cm"/>
