@@ -10,63 +10,10 @@ export default function Home() {
   const [copyMsg, setCopyMsg] = useState(false);
   
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
-
-  const calculateCBM = () => {
-    const l = parseFloat(dims.length);
-    const w = parseFloat(dims.width);
-    const h = parseFloat(dims.height);
-    const q = parseInt(dims.qty);
-    if (l && w && h) {
-      const cbm = (l * w * h * q) / 1000000;
-      setResult(parseFloat(cbm.toFixed(3)));
-    }
-  };
-
-  const shareSite = async () => {
-    const text = selectedProduct 
-      ? `شاهد تفاصيل ${selectedProduct.name} عبر موقعنا` 
-      : 'شاهد أحدث المنتجات واحسب شحنتك عبر موقعنا الرسمي';
-    
-    if (navigator.share) {
-      try {
-        await navigator.share({ title: 'الحاج كزيوني & Swivel', text: text, url: siteUrl });
-      } catch (err) { copyToClipboard(); }
-    } else { copyToClipboard(); }
-  };
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(siteUrl);
-    setCopyMsg(true);
-    setTimeout(() => setCopyMsg(false), 3000);
-  };
-
-  const products = [
-    { 
-      id: 1, 
-      name: "لوحة مفاتيح للهواتف محمولة (للمتاجر)", 
-      img: "/images/product1.jpg", 
-      price: "30 $", 
-      pColor: "text-amber-600",
-      description: "لوحة مفاتيح احترافية مصممة خصيصاً لأصحاب المحلات والمتاجر، تدعم الربط السريع بالهاتف لتسهيل عمليات البيع والرد على الزبائن.",
-      moq: "10 قطع"
-    },
-    { 
-      id: 2, 
-      name: "ماكينة تجفيف الفواكه بالتبريد", 
-      img: "/images/product2.
-cat << 'EOF' > ~/kazioni-swivel-store/src/app/page.tsx
-"use client";
-import { useState } from 'react';
-
-export default function Home() {
-  const whatsappNumber = "218915044855"; 
-  const siteUrl = "https://kazioni-store.vercel.app";
   
-  const [dims, setDims] = useState({ length: '', width: '', height: '', qty: '1' });
-  const [result, setResult] = useState<number | null>(null);
-  const [copyMsg, setCopyMsg] = useState(false);
-  
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  // حالة التحكم في فتح وإغلاق قوائم الشحن
+  const [isAirOpen, setIsAirOpen] = useState(false);
+  const [isSeaOpen, setIsSeaOpen] = useState(false);
 
   const calculateCBM = () => {
     const l = parseFloat(dims.length);
@@ -181,38 +128,79 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* قسم أسعار الشحن القابل للطي */}
       <section className="p-6 max-w-md mx-auto mt-2">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-black text-gray-800 border-r-4 border-blue-900 pr-3">أسعار الشحن 📦</h3>
           <span className="bg-amber-100 text-amber-800 text-[10px] font-black px-3 py-1 rounded-full shadow-sm">تحديث: أبريل 2026</span>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 mb-5 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-900 to-blue-700 p-4 text-white flex justify-between items-center shadow-inner">
-            <h4 className="font-bold text-lg">✈️ الشحن الجوي</h4>
-          </div>
-          <div className="p-5 space-y-3">
-            <div className="flex justify-between items-center border-b border-gray-50 pb-2">
-              <span className="text-xs font-bold text-gray-500">عادي (1 - 100 كجم)</span>
-              <span className="font-black text-blue-700">9.25 $</span>
+        {/* كارت الشحن الجوي */}
+        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 mb-4 overflow-hidden transition-all duration-300">
+          <button onClick={() => setIsAirOpen(!isAirOpen)} className="w-full bg-gradient-to-r from-blue-900 to-blue-700 p-4 text-white flex justify-between items-center shadow-inner focus:outline-none active:scale-[0.98] transition-transform">
+            <h4 className="font-bold text-lg flex items-center">✈️ الشحن الجوي</h4>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] bg-white/20 px-2 py-1 rounded-lg shadow-sm">اضغط للتفاصيل</span>
+              <span className="text-lg transition-transform duration-300">{isAirOpen ? '🔼' : '🔽'}</span>
             </div>
-            <div className="flex justify-between items-center">
-              <span className="text-xs font-bold text-gray-800">بضاعة كوبي 👜</span>
-              <span className="font-black text-orange-500">9.40 $</span>
+          </button>
+          
+          {isAirOpen && (
+            <div className="p-5 space-y-3 bg-blue-50/50 border-t border-blue-100">
+              <div className="flex justify-between items-center border-b border-gray-200 pb-2">
+                <span className="text-xs font-bold text-gray-600">عادي (1 - 100 كجم)</span>
+                <span className="font-black text-blue-800">9.25 $</span>
+              </div>
+              <div className="flex justify-between items-center border-b border-gray-200 pb-2">
+                <span className="text-xs font-bold text-gray-600">عادي (100 - 250 كجم)</span>
+                <span className="font-black text-blue-800">9.10 $</span>
+              </div>
+              <div className="flex justify-between items-center border-b border-gray-200 pb-2">
+                <span className="text-xs font-bold text-gray-600">عادي (250 - 500 كجم)</span>
+                <span className="font-black text-blue-800">9.00 $</span>
+              </div>
+              <div className="flex justify-between items-center border-b border-gray-200 pb-2">
+                <span className="text-xs font-bold text-gray-800">بضاعة كوبي 👜</span>
+                <span className="font-black text-orange-600">9.40 $</span>
+              </div>
+              <div className="flex justify-between items-center border-b border-gray-200 pb-2">
+                <span className="text-xs font-bold text-gray-800">كوزماتك 💄</span>
+                <span className="font-black text-orange-600">9.50 $</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs font-bold text-gray-800">بضاعة طبية 🩺</span>
+                <span className="font-black text-red-600">10.50 $</span>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
-        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
-          <div className="bg-gradient-to-r from-teal-800 to-teal-600 p-4 text-white flex justify-between items-center shadow-inner">
-            <h4 className="font-bold text-lg">🚢 الشحن البحري</h4>
-          </div>
-          <div className="p-5">
-            <div className="flex justify-between items-center">
-              <span className="text-xs font-bold text-gray-500">تصنيف عادي 📦</span>
-              <span className="font-black text-teal-700 text-base">158.5 $</span>
+        {/* كارت الشحن البحري */}
+        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300">
+          <button onClick={() => setIsSeaOpen(!isSeaOpen)} className="w-full bg-gradient-to-r from-teal-800 to-teal-600 p-4 text-white flex justify-between items-center shadow-inner focus:outline-none active:scale-[0.98] transition-transform">
+            <h4 className="font-bold text-lg flex items-center">🚢 الشحن البحري</h4>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] bg-white/20 px-2 py-1 rounded-lg shadow-sm">اضغط للتفاصيل</span>
+              <span className="text-lg transition-transform duration-300">{isSeaOpen ? '🔼' : '🔽'}</span>
             </div>
-          </div>
+          </button>
+          
+          {isSeaOpen && (
+            <div className="p-5 space-y-3 bg-teal-50/50 border-t border-teal-100">
+              <div className="flex justify-between items-center border-b border-gray-200 pb-2">
+                <span className="text-xs font-bold text-gray-600">تصنيف عادي 📦</span>
+                <span className="font-black text-teal-800 text-base">158.5 $ <span className="text-[10px] font-normal text-gray-500">لكل CBM</span></span>
+              </div>
+              <div className="flex justify-between items-center border-b border-gray-200 pb-2">
+                <span className="text-xs font-bold text-gray-800">ماركة كوبي 👕</span>
+                <span className="font-black text-orange-600 text-base">168.5 $ <span className="text-[10px] font-normal text-gray-500">لكل CBM</span></span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs font-bold text-gray-800">كوزماتك 🧴</span>
+                <span className="font-black text-orange-600 text-base">178.5 $ <span className="text-[10px] font-normal text-gray-500">لكل CBM</span></span>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
