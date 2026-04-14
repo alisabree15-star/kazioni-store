@@ -97,6 +97,13 @@ export default function Home() {
     window.open(url, '_blank');
   };
 
+  // دالة الحوالات المالية المخصصة
+  const handleTransferClick = (countryName: string, flag: string) => {
+    const msg = `مرحباً مؤسسة الحاج كزيوني، أرغب في الاستفسار عن أسعار الصرف اليومية وإرسال حوالة مالية إلى ${countryName} ${flag}.`;
+    const url = `https://wa.me/${transfersWhatsapp}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  };
+
   const products = [
     { id: 1, name: "لوحة مفاتيح للهواتف محمولة (للمتاجر)", img: "/images/product1.jpg", price: "30 $", pColor: "text-amber-600", shippingNote: "السعر لا يشمل الشحن", description: "لوحة مفاتيح احترافية مصممة للهواتف، تدعم الربط السريع لتسهيل عمليات البيع والرد على الزبائن.", moq: "10 قطع", cbm: "0.002", weight: "0.3" },
     { id: 2, name: "ماكينة تجفيف الفواكه بالتبريد", img: "/images/product2.jpg", price: "1850 $", pColor: "text-amber-600", shippingNote: "متوفر شحن بحري فقط (شامل الشحن والعمولة)", description: "أحدث تقنيات التجفيف بالتبريد للحفاظ على القيمة الغذائية للفواكه. مثالية للمشاريع الغذائية الناشئة.", moq: "1 ماكينة", cbm: "0.680", weight: "80" },
@@ -110,8 +117,8 @@ export default function Home() {
     { id: 10, name: "آلة صنع المثلجات (جيلاطي المفترش ❤️)", img: "/images/product10.jpg", price: "400 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "أبهر زبائنك بعروض الآيس كريم المقلي (جيلاطي المفترش) الطازجة والمبتكرة. تتميز هذه الآلة المكتبية المدمجة بسطح تجميد مسطح ومصقول من الستانلس ستيل المقاوم للصدأ، مما يضمن أداءً تجميدياً فائق السرعة.", moq: "1 قطعة", cbm: "0.100", weight: "25" },
     { id: 11, name: "كرسي تدليك حديث محترف 💺", img: "/images/product11.jpg", price: "650 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن بحري 🚢)", description: "كرسي تدليك احترافي مصمم لتوفير أقصى درجات الاسترخاء والراحة. يتميز بتقنيات متطورة تشمل التدليك بالهواء المضغوط، ونظام تسخين متكامل لدعم الدورة الدموية، وتدليك شامل من الرقبة إلى القدمين.", moq: "1 قطعة", cbm: "1.150", weight: "85" },
     { id: 12, name: "ماكينة رش الأسمنت والطلاء الحديثة 🏗️", img: "/images/product12.jpg", price: "1100 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة رش احترافية عالية الضغط (Airless Sprayer) موديل 1095، مصممة لأعمال البناء والتشطيبات الثقيلة. مثالية لرش الأسمنت، المعجون، والطلاء بكفاءة وسرعة فائقة.", moq: "1 قطعة", cbm: "0.250", weight: "45" },
-    { id: 13, name: "ماكينة طباعه على الملابس المميزة 👕", img: "/images/product13.jpg", price: "270 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة طباعة حرارية (مكبس حراري) احترافية ومتميزة، مثالية لمشاريع الطباعة على الملابس، التيشيرتات، والمسطحات. تتميز بلوحة تسخين توفر توزيعاً حرارياً متساوياً لضمان ثبات الألوان وجودة الطباعة، وشاشة تحكم رقمية لضبط الوقت ودرجة الحرارة بدقة.", moq: "1 قطعة", cbm: "0.080", weight: "25" },
-    { id: 14, name: "آلة دوش محمولة مميزة 🚿", img: "/images/product14.jpg", price: "16 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مضخة استحمام محمولة (دوش متنقل) قابلة للشحن، خيارك الأمثل لرحلات التخييم، السفر، أو الاستخدام المنزلي كحل سريع وعملي. تتميز بتصميم مدمج وخفيف، مع بطارية قوية قابلة لإعادة الشحن عبر USB، وتدفق مياه سلس ومستمر.", moq: "20 قطعة", cbm: "0.005", weight: "0.8" },
+    { id: 13, name: "ماكينة طباعه على الملابس المميزة 👕", img: "/images/product13.jpg", price: "270 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة طباعة حرارية (مكبس حراري) احترافية ومتميزة، مثالية لمشاريع الطباعة على الملابس، التيشيرتات، والمسطحات. تتميز بلوحة تسخين توفر توزيعاً حرارياً متساوياً لضمان ثبات الألوان وجودة الطباعة.", moq: "1 قطعة", cbm: "0.080", weight: "25" },
+    { id: 14, name: "آلة دوش محمولة مميزة 🚿", img: "/images/product14.jpg", price: "16 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مضخة استحمام محمولة (دوش متنقل) قابلة للشحن، خيارك الأمثل لرحلات التخييم، السفر، أو الاستخدام المنزلي كحل سريع وعملي. تتميز بتصميم مدمج وخفيف، مع بطارية قوية قابلة لإعادة الشحن عبر USB.", moq: "20 قطعة", cbm: "0.005", weight: "0.8" },
     { id: 15, name: "مثبت تصوير للهواتف (جيمبال) 🎬", img: "/images/product15.jpg", price: "40 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مثبت تصوير احترافي للهواتف الذكية (Gimbal) مزود بثلاثة محاور لمنع الاهتزاز وتصوير فيديوهات سينمائية ناعمة. يتميز بقاعدة تثبيت (ترايبود) مدمجة، ولوحة تحكم ذكية في المقبض لتسهيل التحكم بالزوايا والتقريب.", moq: "10 قطع", cbm: "0.002", weight: "0.5" }
   ];
 
@@ -253,7 +260,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* قسم الحوالات المالية */}
+      {/* قسم الحوالات المالية التفاعلي الجديد 💸 */}
       <section className="p-6 max-w-md mx-auto pt-0 text-black">
         <div className="bg-gradient-to-br from-green-800 to-emerald-600 rounded-3xl p-6 shadow-xl border-t-8 border-green-500 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10"></div>
@@ -261,19 +268,15 @@ export default function Home() {
           <h3 className="text-lg font-black mb-1 flex items-center tracking-tight">💸 خدمة الحوالات المالية الدولية</h3>
           <p className="text-[10px] font-bold text-green-100 mb-4">نوفر لك تحويلات آمنة وسريعة لمصانعك ومورديك</p>
 
-          <div className="bg-white/10 rounded-2xl p-3 mb-4 backdrop-blur-sm border border-white/20">
-            <p className="text-xs font-bold text-center mb-2">الدول المدعومة للتحويل:</p>
-            <div className="flex justify-center gap-4 text-2xl">
-              <span className="drop-shadow-md" title="الصين">🇨🇳</span>
-              <span className="drop-shadow-md" title="تركيا">🇹🇷</span>
-              <span className="drop-shadow-md" title="مصر">🇪🇬</span>
-              <span className="drop-shadow-md" title="تونس">🇹🇳</span>
+          <div className="bg-white/10 rounded-2xl p-4 mb-2 backdrop-blur-sm border border-white/20 text-center">
+            <p className="text-sm font-black mb-4">اضغط على علم الدولة للتحويل المباشر 👇</p>
+            <div className="flex justify-center gap-4">
+              <button onClick={() => handleTransferClick('الصين', '🇨🇳')} className="text-4xl hover:scale-110 active:scale-95 transition-all drop-shadow-lg bg-white/20 p-3 rounded-2xl border border-white/30" title="تحويل للصين">🇨🇳</button>
+              <button onClick={() => handleTransferClick('تركيا', '🇹🇷')} className="text-4xl hover:scale-110 active:scale-95 transition-all drop-shadow-lg bg-white/20 p-3 rounded-2xl border border-white/30" title="تحويل لتركيا">🇹🇷</button>
+              <button onClick={() => handleTransferClick('مصر', '🇪🇬')} className="text-4xl hover:scale-110 active:scale-95 transition-all drop-shadow-lg bg-white/20 p-3 rounded-2xl border border-white/30" title="تحويل لمصر">🇪🇬</button>
+              <button onClick={() => handleTransferClick('تونس', '🇹🇳')} className="text-4xl hover:scale-110 active:scale-95 transition-all drop-shadow-lg bg-white/20 p-3 rounded-2xl border border-white/30" title="تحويل لتونس">🇹🇳</button>
             </div>
           </div>
-
-          <a href={"https://wa.me/" + transfersWhatsapp + "?text=مرحباً الحاج كزيوني، أرغب في الاستفسار عن أسعار الصرف اليومية وإرسال حوالة مالية."} className="block w-full bg-white text-green-800 py-3 rounded-xl font-black text-center shadow-lg active:scale-95 transition-all text-sm">
-            استفسر عن سعر الصرف وحوّل الآن 💬
-          </a>
         </div>
       </section>
 
