@@ -106,7 +106,8 @@ export default function Home() {
     { id: 7, name: "ماكينة بيتزا موديل 2025 🔥", img: "/images/product7.jpg", price: "430 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن جوي سريع ✈️)", description: "ماكينة بيتزا تجارية حديثة، مصممة خصيصاً للمطاعم والمقاهي. توفر توزيعاً حرارياً متساوياً لخبز مثالي وسريع.", moq: "1 قطعة", cbm: "0.150", weight: "35" },
     { id: 8, name: "ماكينة التنظيف بالثلج الجاف 👀", img: "/images/product8.jpg", price: "1400 $", pColor: "text-amber-600", shippingNote: "شامل الشحن والعمولة إلى ليبيا (شحن بحري فقط 🚢)", description: "ماكينة تنظيف صناعية متطورة بتقنية الثلج الجاف (Dry Ice Blasting) من Crodium. حل مثالي لتنظيف المحركات وإزالة الشحوم الكربونية.", moq: "1 قطعة", cbm: "0.450", weight: "75" },
     { id: 9, name: "آلة رحي الحبوب المميزة 🥜", img: "/images/product9.jpg", price: "225 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "آلة رحي وتنعيم تجارية من الستانلس ستيل المقاوم للصدأ. مصممة خصيصاً لطحن الحبوب وصنع المعاجين مثل زبدة الفول السوداني والطحينة بكفاءة عالية.", moq: "1 قطعة", cbm: "0.090", weight: "30" },
-    { id: 10, name: "آلة صنع المثلجات (جيلاطي المفترش ❤️)", img: "/images/product10.jpg", price: "400 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "أبهر زبائنك بعروض الآيس كريم المقلي (جيلاطي المفترش) الطازجة والمبتكرة. تتميز هذه الآلة المكتبية المدمجة بسطح تجميد مسطح ومصقول من الستانلس ستيل المقاوم للصدأ، مما يضمن أداءً تجميدياً فائق السرعة.", moq: "1 قطعة", cbm: "0.100", weight: "25" }
+    { id: 10, name: "آلة صنع المثلجات (جيلاطي المفترش ❤️)", img: "/images/product10.jpg", price: "400 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "أبهر زبائنك بعروض الآيس كريم المقلي (جيلاطي المفترش) الطازجة والمبتكرة. تتميز هذه الآلة المكتبية المدمجة بسطح تجميد مسطح ومصقول من الستانلس ستيل المقاوم للصدأ، مما يضمن أداءً تجميدياً فائق السرعة.", moq: "1 قطعة", cbm: "0.100", weight: "25" },
+    { id: 11, name: "كرسي تدليك حديث محترف 💺", img: "/images/product11.jpg", price: "650 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن بحري 🚢)", description: "كرسي تدليك احترافي مصمم لتوفير أقصى درجات الاسترخاء والراحة. يتميز بتقنيات متطورة تشمل التدليك بالهواء المضغوط، ونظام تسخين متكامل لدعم الدورة الدموية، وتدليك شامل من الرقبة إلى القدمين. تصميم عصري وفخم يناسب المنازل الراقية ومراكز العناية (Spa)، مع واجهة ذكية لتخصيص برامج التدليك بكل سهولة.", moq: "1 قطعة", cbm: "1.150", weight: "85" }
   ];
 
   if (selectedProduct) {
@@ -208,7 +209,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* 2. أسعار الشحن (عادت للأعلى) */}
+      {/* 2. أسعار الشحن */}
       <section className="p-6 max-w-md mx-auto mt-2 text-black">
         <div className="flex justify-between items-center mb-4 gap-2">
           <h3 className="text-[16px] leading-tight font-black text-gray-800 border-r-4 border-blue-900 pr-3">أسعار الشحن من الصين 🇨🇳 إلى ليبيا 🇱🇾</h3>
@@ -247,7 +248,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. حاسبة الحجم (عادت للأعلى) */}
+      {/* 3. حاسبة الحجم */}
       <section className="p-6 max-w-md mx-auto pt-0 text-black">
         <div className="bg-white rounded-3xl p-6 shadow-xl border-t-8 border-teal-700">
           <h3 className="text-lg font-black text-teal-800 mb-2 flex items-center tracking-tight text-black text-black">🧮 حاسبة الحجم (CBM)</h3>
@@ -262,7 +263,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. المنتجات والكتالوج (في الأسفل) */}
+      {/* 4. المنتجات (الكتالوج) */}
       <section className="p-6 max-w-md mx-auto pt-2 text-black">
         <h3 className="text-xl font-bold text-gray-800 mb-4 border-r-4 border-orange-500 pr-3 text-black">المنتجات (الكتالوج) 🇨🇳</h3>
         <div className="grid grid-cols-2 gap-4">
