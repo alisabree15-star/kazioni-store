@@ -252,8 +252,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* حاسبة الحجم */}
+      {/* قسم الحوالات المالية الجديد 💸 */}
       <section className="p-6 max-w-md mx-auto pt-0 text-black">
+        <div className="bg-gradient-to-br from-green-800 to-emerald-600 rounded-3xl p-6 shadow-xl border-t-8 border-green-500 text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10"></div>
+          
+          <h3 className="text-lg font-black mb-1 flex items-center tracking-tight">💸 خدمة الحوالات المالية الدولية</h3>
+          <p className="text-[10px] font-bold text-green-100 mb-4">نوفر لك تحويلات آمنة وسريعة لمصانعك ومورديك</p>
+
+          <div className="bg-white/10 rounded-2xl p-3 mb-4 backdrop-blur-sm border border-white/20">
+            <p className="text-xs font-bold text-center mb-2">الدول المدعومة للتحويل:</p>
+            <div className="flex justify-center gap-4 text-2xl">
+              <span className="drop-shadow-md" title="الصين">🇨🇳</span>
+              <span className="drop-shadow-md" title="تركيا">🇹🇷</span>
+              <span className="drop-shadow-md" title="مصر">🇪🇬</span>
+              <span className="drop-shadow-md" title="النيجر">🇳🇪</span>
+            </div>
+          </div>
+
+          <a href={"https://wa.me/" + whatsappNumber + "?text=مرحباً الحاج كزيوني، أرغب في الاستفسار عن أسعار الصرف اليومية وإرسال حوالة مالية."} className="block w-full bg-white text-green-800 py-3 rounded-xl font-black text-center shadow-lg active:scale-95 transition-all text-sm">
+            استفسر عن سعر الصرف وحوّل الآن 💬
+          </a>
+        </div>
+      </section>
+
+      {/* حاسبة الحجم */}
+      <section className="p-6 max-w-md mx-auto pt-2 text-black">
         <div className="bg-white rounded-3xl p-6 shadow-xl border-t-8 border-teal-700">
           <h3 className="text-lg font-black text-teal-800 mb-2 flex items-center tracking-tight text-black text-black">🧮 حاسبة الحجم (CBM)</h3>
           <div className="grid grid-cols-2 gap-3 mb-4 text-black text-black">
