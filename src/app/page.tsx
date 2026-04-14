@@ -266,7 +266,7 @@ export default function Home() {
               <span className="drop-shadow-md" title="الصين">🇨🇳</span>
               <span className="drop-shadow-md" title="تركيا">🇹🇷</span>
               <span className="drop-shadow-md" title="مصر">🇪🇬</span>
-              <span className="drop-shadow-md" title="النيجر">🇳🇪</span>
+              <span className="drop-shadow-md" title="تونس">🇹🇳</span>
             </div>
           </div>
 
