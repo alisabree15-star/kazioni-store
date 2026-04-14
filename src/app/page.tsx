@@ -2,7 +2,8 @@
 import { useState } from 'react';
 
 export default function Home() {
-  const whatsappNumber = "218915044855"; 
+  const whatsappNumber = "218915044855"; // رقم المبيعات والشحن
+  const transfersWhatsapp = "218913489000"; // رقم الحوالات المالية
   const siteUrl = "https://kazioni-store.vercel.app";
   
   const [dims, setDims] = useState({ length: '', width: '', height: '', qty: '1' });
@@ -110,8 +111,8 @@ export default function Home() {
     { id: 11, name: "كرسي تدليك حديث محترف 💺", img: "/images/product11.jpg", price: "650 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن بحري 🚢)", description: "كرسي تدليك احترافي مصمم لتوفير أقصى درجات الاسترخاء والراحة. يتميز بتقنيات متطورة تشمل التدليك بالهواء المضغوط، ونظام تسخين متكامل لدعم الدورة الدموية، وتدليك شامل من الرقبة إلى القدمين.", moq: "1 قطعة", cbm: "1.150", weight: "85" },
     { id: 12, name: "ماكينة رش الأسمنت والطلاء الحديثة 🏗️", img: "/images/product12.jpg", price: "1100 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة رش احترافية عالية الضغط (Airless Sprayer) موديل 1095، مصممة لأعمال البناء والتشطيبات الثقيلة. مثالية لرش الأسمنت، المعجون، والطلاء بكفاءة وسرعة فائقة.", moq: "1 قطعة", cbm: "0.250", weight: "45" },
     { id: 13, name: "ماكينة طباعه على الملابس المميزة 👕", img: "/images/product13.jpg", price: "270 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة طباعة حرارية (مكبس حراري) احترافية ومتميزة، مثالية لمشاريع الطباعة على الملابس، التيشيرتات، والمسطحات. تتميز بلوحة تسخين توفر توزيعاً حرارياً متساوياً لضمان ثبات الألوان وجودة الطباعة، وشاشة تحكم رقمية لضبط الوقت ودرجة الحرارة بدقة.", moq: "1 قطعة", cbm: "0.080", weight: "25" },
-    { id: 14, name: "آلة دوش محمولة مميزة 🚿", img: "/images/product14.jpg", price: "16 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مضخة استحمام محمولة (دوش متنقل) قابلة للشحن، خيارك الأمثل لرحلات التخييم، السفر، أو الاستخدام المنزلي كحل سريع وعملي. تتميز بتصميم مدمج وخفيف، مع بطارية قوية قابلة لإعادة الشحن عبر USB، وتدفق مياه سلس ومستمر. فقط ضع المضخة في أي وعاء ماء واستمتع بتجربة استحمام مريحة في أي مكان وزمان.", moq: "20 قطعة", cbm: "0.005", weight: "0.8" },
-    { id: 15, name: "مثبت تصوير للهواتف (جيمبال) 🎬", img: "/images/product15.jpg", price: "40 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مثبت تصوير احترافي للهواتف الذكية (Gimbal) مزود بثلاثة محاور لمنع الاهتزاز وتصوير فيديوهات سينمائية ناعمة. يتميز بقاعدة تثبيت (ترايبود) مدمجة، ولوحة تحكم ذكية في المقبض لتسهيل التحكم بالزوايا والتقريب. خيار مثالي لصناع المحتوى، الفلوقرز، ومحبي التصوير لرفع جودة إنتاجهم البصري.", moq: "10 قطع", cbm: "0.002", weight: "0.5" }
+    { id: 14, name: "آلة دوش محمولة مميزة 🚿", img: "/images/product14.jpg", price: "16 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مضخة استحمام محمولة (دوش متنقل) قابلة للشحن، خيارك الأمثل لرحلات التخييم، السفر، أو الاستخدام المنزلي كحل سريع وعملي. تتميز بتصميم مدمج وخفيف، مع بطارية قوية قابلة لإعادة الشحن عبر USB، وتدفق مياه سلس ومستمر.", moq: "20 قطعة", cbm: "0.005", weight: "0.8" },
+    { id: 15, name: "مثبت تصوير للهواتف (جيمبال) 🎬", img: "/images/product15.jpg", price: "40 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مثبت تصوير احترافي للهواتف الذكية (Gimbal) مزود بثلاثة محاور لمنع الاهتزاز وتصوير فيديوهات سينمائية ناعمة. يتميز بقاعدة تثبيت (ترايبود) مدمجة، ولوحة تحكم ذكية في المقبض لتسهيل التحكم بالزوايا والتقريب.", moq: "10 قطع", cbm: "0.002", weight: "0.5" }
   ];
 
   if (selectedProduct) {
@@ -252,7 +253,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* قسم الحوالات المالية الجديد 💸 */}
+      {/* قسم الحوالات المالية */}
       <section className="p-6 max-w-md mx-auto pt-0 text-black">
         <div className="bg-gradient-to-br from-green-800 to-emerald-600 rounded-3xl p-6 shadow-xl border-t-8 border-green-500 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10"></div>
@@ -270,7 +271,7 @@ export default function Home() {
             </div>
           </div>
 
-          <a href={"https://wa.me/" + whatsappNumber + "?text=مرحباً الحاج كزيوني، أرغب في الاستفسار عن أسعار الصرف اليومية وإرسال حوالة مالية."} className="block w-full bg-white text-green-800 py-3 rounded-xl font-black text-center shadow-lg active:scale-95 transition-all text-sm">
+          <a href={"https://wa.me/" + transfersWhatsapp + "?text=مرحباً الحاج كزيوني، أرغب في الاستفسار عن أسعار الصرف اليومية وإرسال حوالة مالية."} className="block w-full bg-white text-green-800 py-3 rounded-xl font-black text-center shadow-lg active:scale-95 transition-all text-sm">
             استفسر عن سعر الصرف وحوّل الآن 💬
           </a>
         </div>
