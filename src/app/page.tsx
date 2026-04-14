@@ -118,8 +118,9 @@ export default function Home() {
     { id: 13, name: "ماكينة طباعه على الملابس المميزة 👕", img: "/images/product13.jpg", price: "270 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة طباعة حرارية (مكبس حراري) احترافية ومتميزة، مثالية لمشاريع الطباعة على الملابس، التيشيرتات، والمسطحات. تتميز بلوحة تسخين توفر توزيعاً حرارياً متساوياً لضمان ثبات الألوان وجودة الطباعة، وشاشة تحكم رقمية لضبط الوقت ودرجة الحرارة بدقة.", moq: "1 قطعة", cbm: "0.080", weight: "25" },
     { id: 14, name: "آلة دوش محمولة مميزة 🚿", img: "/images/product14.jpg", price: "16 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مضخة استحمام محمولة (دوش متنقل) قابلة للشحن، خيارك الأمثل لرحلات التخييم، السفر، أو الاستخدام المنزلي كحل سريع وعملي. تتميز بتصميم مدمج وخفيف، وبطارية قوية قابلة لإعادة الشحن عبر USB، وتدفق مياه سلس ومستمر.", moq: "20 قطعة", cbm: "0.005", weight: "0.8" },
     { id: 15, name: "مثبت تصوير للهواتف (جيمبال) 🎬", img: "/images/product15.jpg", price: "40 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مثبت تصوير احترافي للهواتف الذكية (Gimbal) مزود بثلاثة محاور لمنع الاهتزاز وتصوير فيديوهات سينمائية ناعمة. يتميز بقاعدة تثبيت (ترايبود) مدمجة، ولوحة تحكم ذكية في المقبض.", moq: "10 قطع", cbm: "0.002", weight: "0.5" },
-    { id: 16, name: "ماكينة تقشير وغسيل البطاطس 🥔", img: "/images/product16.jpg", price: "460 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "الحل الأمثل لتقشير وغسيل البطاطس بكميات تجارية في المطاعم والفنادق! تتميز هذه الآلة الصناعية القوية بهيكل متين مصنوع بالكامل من الستانلس ستيل الصحي. توفر عملية مزدوجة بفضل محركها الجبار.", moq: "1 قطعة", cbm: "0.300", weight: "50" },
-    { id: 17, name: "آلة تصوير 360° الدوارة 📸", img: "/images/product17.jpg", price: "460 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ارتقِ بتجربة التصوير في أحداثك ومناسباتك مع آلة تصوير كشك 360° الاحترافية (360 Photo Booth). يتميز هذا الطراز بقطر منصة مريح يبلغ 80 سم، المنصة مزودة بإضاءة LED سفلية مذهلة وحلقة إضاءة RGB.", moq: "5 قطع", cbm: "0.450", weight: "65" }
+    { id: 16, name: "ماكينة تقشير وغسيل البطاطس 🥔", img: "/images/product16.jpg", price: "460 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "الحل الأمثل لتقشير وغسيل البطاطس بكميات تجارية في المطاعم والفنادق! تتميز هذه الآلة الصناعية القوية بهيكل متين مصنوع بالكامل من الستانلس ستيل الصحي. توفر عملية مزدوجة بفضل محركها الجبار وعجلاتها الداخلية الدوارة.", moq: "1 قطعة", cbm: "0.300", weight: "50" },
+    { id: 17, name: "آلة تصوير 360° الدوارة 📸", img: "/images/product17.jpg", price: "460 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ارتقِ بتجربة التصوير في أحداثك ومناسباتك مع آلة تصوير كشك 360° الاحترافية (360 Photo Booth). يتميز هذا الطراز بقطر منصة مريح يبلغ 80 سم، المنصة مزودة بإضاءة LED سفلية مذهلة وحلقة إضاءة RGB مدمجة.", moq: "5 قطع", cbm: "0.450", weight: "65" },
+    { id: 19, name: "ماكينة آيس كريم جيلاطي سوفت تجارية (3 أذرع) 🍦", img: "/images/product19.jpg", price: "750 $", pColor: "text-amber-600", shippingNote: "سعر شامل عمولة ولا يشمل الشحن", description: "اكتشف قمة الاحترافية في إنتاج الجيلاتي مع هذه الماكينة التجارية الرأسية الجبارة، كما يظهر في الصورة! مصنوعة بالكامل من الفولاذ المقاوم للصدأ (الستانلس ستيل) عالي الجودة، مما يضمن طول العمر وسهولة التنظيف. تأتي هذه الماكينة بـ 3 أذرع للصب، قادرة على إنتاج نكهتين منفردتين ونكهة مزيج (Twin Twist + 1) بسرعة وكفاءة فائقة. وتتميز بلوحة تحكم ذكية رقمية لضبط دقيق ونظام تبريد قوي ومتطور لآيس كريم سوفت ناعم ومنعش باستمرار. وهي مزودة بعجلات لسهولة النقل داخل متجرك. وتوضح الصورة جودة الآيس كريم المنتج، جاهزًا للتزيين بلمسة فنية لإبهار زبائنك بتقديم تجربة لا تُنسى.", moq: "1 قطعة" }
   ];
 
   if (selectedProduct) {
@@ -166,7 +167,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50 text-right font-sans text-black pb-32 relative" dir="rtl">
-      {/* الشريط العلوي الأزرق */}
+      {/* 1. الشريط العلوي الأزرق */}
       <nav className="bg-blue-900 text-white p-4 shadow-xl sticky top-0 z-40 flex justify-between items-center border-b-4 border-amber-500">
         <div>
           <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
@@ -177,19 +178,10 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* شريط الإعلانات المتحرك بجانب زر تواصل مباشر */}
+      {/* 2. شريط متحرك أسفل العنوان (الأخضر للخدمات المتاحة) */}
       <div className="bg-green-700 text-white overflow-hidden shadow-inner border-b border-green-800 flex items-center gap-2 px-2">
-        {/* الزر الأصفر الجديد */}
-        <a 
-          href={`https://wa.me/${transfersWhatsapp}?text=${encodeURIComponent("مرحباً مؤسسة الحاج كزيوني، أرغب في الاستفسار عن أسعار بيع/شراء USDT اليوم.")}`}
-          target="_blank"
-          className="bg-amber-400 text-black px-3 py-1 text-xs font-black rounded-full shadow whitespace-nowrap active:scale-95 transition-all flex items-center gap-1"
-        >
-          <span className="text-lg">💰</span>
-          تواصل مباشر
-        </a>
         {/* الشريط المتحرك */}
-        <div className="animate-marquee font-bold text-sm py-2">
+        <div className="animate-marquee font-bold text-sm py-2 text-white">
           متوفر بيع وشراء عملة USDT 🟢 تواصل معنا لمعرفة أسعار اليوم.
         </div>
       </div>
@@ -200,7 +192,7 @@ export default function Home() {
           <div className="w-[85%] max-w-md bg-gray-50 h-full flex flex-col shadow-2xl animate-slide-in">
             <div className="bg-white p-4 flex justify-between items-center border-b border-gray-200">
               <button onClick={() => setIsCartOpen(false)} className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full font-bold text-gray-600">✕</button>
-              <h2 className="text-lg font-black flex items-center gap-2">سلة المشتريات 🛒</h2>
+              <h2 className="text-lg font-black flex items-center gap-2 text-black">سلة المشتريات 🛒</h2>
             </div>
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {cart.length === 0 ? (
@@ -230,7 +222,7 @@ export default function Home() {
               <div className="bg-white p-5 shadow-[0_-4px_15px_rgba(0,0,0,0.05)] border-t border-gray-200">
                 <div className="flex justify-between items-center mb-2"><span className="text-gray-500 text-xs font-bold">الحجم الإجمالي:</span><span className="font-black text-blue-800 text-sm">{cartTotalCBM.toFixed(3)} CBM</span></div>
                 <div className="flex justify-between items-center mb-3 border-b border-gray-100 pb-3"><span className="text-gray-500 text-xs font-bold">الوزن الإجمالي:</span><span className="font-black text-orange-600 text-sm">{cartTotalWeight.toFixed(2)} KG</span></div>
-                <div className="flex justify-between items-center mb-4"><span className="font-bold text-gray-800">إجمالي السعر:</span><span className="font-black text-xl text-green-600">{cartTotalPrice} $</span></div>
+                <div className="flex justify-between items-center mb-4"><span className="font-bold text-gray-800 text-black">إجمالي السعر:</span><span className="font-black text-xl text-green-600">{cartTotalPrice} $</span></div>
                 <button onClick={checkoutWhatsApp} className="w-full bg-green-500 text-white py-4 rounded-xl font-black shadow-lg flex justify-center items-center gap-2 active:scale-95 transition-all">تأكيد الطلب الآن 📲</button>
               </div>
             )}
@@ -280,7 +272,7 @@ export default function Home() {
       {/* واجهة الحوالات المالية الدولية (البطاقة البيضاء الكبيرة) 💸 */}
       <section className="p-6 max-w-md mx-auto pt-0 text-black">
         <div className="bg-white rounded-3xl p-6 shadow-xl border-t-8 border-emerald-500">
-          <h3 className="text-lg font-black text-emerald-800 mb-1 flex items-center tracking-tight">💸 الحوالات المالية الدولية</h3>
+          <h3 className="text-lg font-black text-emerald-800 mb-1 flex items-center tracking-tight text-black">💸 الحوالات المالية الدولية</h3>
           <p className="text-[10px] font-bold text-gray-500 mb-4">تحويلات آمنة وسريعة لمورديك لمكتبنا في مصر (الشحن متوفر). اضغط للتحويل والاستفسار 👇</p>
 
           <div className="grid grid-cols-2 gap-3">
