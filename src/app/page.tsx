@@ -109,8 +109,9 @@ export default function Home() {
     { id: 10, name: "آلة صنع المثلجات (جيلاطي المفترش ❤️)", img: "/images/product10.jpg", price: "400 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "أبهر زبائنك بعروض الآيس كريم المقلي (جيلاطي المفترش) الطازجة والمبتكرة. تتميز هذه الآلة المكتبية المدمجة بسطح تجميد مسطح ومصقول من الستانلس ستيل المقاوم للصدأ، مما يضمن أداءً تجميدياً فائق السرعة.", moq: "1 قطعة", cbm: "0.100", weight: "25" },
     { id: 11, name: "كرسي تدليك حديث محترف 💺", img: "/images/product11.jpg", price: "650 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن بحري 🚢)", description: "كرسي تدليك احترافي مصمم لتوفير أقصى درجات الاسترخاء والراحة. يتميز بتقنيات متطورة تشمل التدليك بالهواء المضغوط، ونظام تسخين متكامل لدعم الدورة الدموية، وتدليك شامل من الرقبة إلى القدمين.", moq: "1 قطعة", cbm: "1.150", weight: "85" },
     { id: 12, name: "ماكينة رش الأسمنت والطلاء الحديثة 🏗️", img: "/images/product12.jpg", price: "1100 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة رش احترافية عالية الضغط (Airless Sprayer) موديل 1095، مصممة لأعمال البناء والتشطيبات الثقيلة. مثالية لرش الأسمنت، المعجون، والطلاء بكفاءة وسرعة فائقة.", moq: "1 قطعة", cbm: "0.250", weight: "45" },
-    { id: 13, name: "ماكينة طباعه على الملابس المميزة 👕", img: "/images/product13.jpg", price: "270 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة طباعة حرارية (مكبس حراري) احترافية ومتميزة، مثالية لمشاريع الطباعة على الملابس، التيشيرتات، والمسطحات. تتميز بلوحة تسخين توفر توزيعاً حرارياً متساوياً لضمان ثبات الألوان وجودة الطباعة.", moq: "1 قطعة", cbm: "0.080", weight: "25" },
-    { id: 14, name: "آلة دوش محمولة مميزة 🚿", img: "/images/product14.jpg", price: "16 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مضخة استحمام محمولة (دوش متنقل) قابلة للشحن، خيارك الأمثل لرحلات التخييم، السفر، أو الاستخدام المنزلي كحل سريع وعملي. تتميز بتصميم مدمج وخفيف، مع بطارية قوية قابلة لإعادة الشحن عبر USB، وتدفق مياه سلس ومستمر. فقط ضع المضخة في أي وعاء ماء واستمتع بتجربة استحمام مريحة في أي مكان وزمان.", moq: "20 قطعة", cbm: "0.005", weight: "0.8" }
+    { id: 13, name: "ماكينة طباعه على الملابس المميزة 👕", img: "/images/product13.jpg", price: "270 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة طباعة حرارية (مكبس حراري) احترافية ومتميزة، مثالية لمشاريع الطباعة على الملابس، التيشيرتات، والمسطحات. تتميز بلوحة تسخين توفر توزيعاً حرارياً متساوياً لضمان ثبات الألوان وجودة الطباعة، وشاشة تحكم رقمية لضبط الوقت ودرجة الحرارة بدقة.", moq: "1 قطعة", cbm: "0.080", weight: "25" },
+    { id: 14, name: "آلة دوش محمولة مميزة 🚿", img: "/images/product14.jpg", price: "16 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مضخة استحمام محمولة (دوش متنقل) قابلة للشحن، خيارك الأمثل لرحلات التخييم، السفر، أو الاستخدام المنزلي كحل سريع وعملي. تتميز بتصميم مدمج وخفيف، مع بطارية قوية قابلة لإعادة الشحن عبر USB، وتدفق مياه سلس ومستمر. فقط ضع المضخة في أي وعاء ماء واستمتع بتجربة استحمام مريحة في أي مكان وزمان.", moq: "20 قطعة", cbm: "0.005", weight: "0.8" },
+    { id: 15, name: "مثبت تصوير للهواتف (جيمبال) 🎬", img: "/images/product15.jpg", price: "40 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مثبت تصوير احترافي للهواتف الذكية (Gimbal) مزود بثلاثة محاور لمنع الاهتزاز وتصوير فيديوهات سينمائية ناعمة. يتميز بقاعدة تثبيت (ترايبود) مدمجة، ولوحة تحكم ذكية في المقبض لتسهيل التحكم بالزوايا والتقريب. خيار مثالي لصناع المحتوى، الفلوقرز، ومحبي التصوير لرفع جودة إنتاجهم البصري.", moq: "10 قطع", cbm: "0.002", weight: "0.5" }
   ];
 
   if (selectedProduct) {
@@ -157,7 +158,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50 text-right font-sans text-black pb-32 relative" dir="rtl">
-      {/* 1. الشريط العلوي */}
+      {/* الشريط العلوي */}
       <nav className="bg-blue-900 text-white p-4 shadow-xl sticky top-0 z-40 flex justify-between items-center border-b-4 border-amber-500">
         <div>
           <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
@@ -212,7 +213,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* 2. أسعار الشحن */}
+      {/* أسعار الشحن */}
       <section className="p-6 max-w-md mx-auto mt-2 text-black">
         <div className="flex justify-between items-center mb-4 gap-2">
           <h3 className="text-[16px] leading-tight font-black text-gray-800 border-r-4 border-blue-900 pr-3">أسعار الشحن من الصين 🇨🇳 إلى ليبيا 🇱🇾</h3>
@@ -251,7 +252,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. حاسبة الحجم */}
+      {/* حاسبة الحجم */}
       <section className="p-6 max-w-md mx-auto pt-0 text-black">
         <div className="bg-white rounded-3xl p-6 shadow-xl border-t-8 border-teal-700">
           <h3 className="text-lg font-black text-teal-800 mb-2 flex items-center tracking-tight text-black text-black">🧮 حاسبة الحجم (CBM)</h3>
@@ -266,7 +267,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. المنتجات (الكتالوج) */}
+      {/* الكتالوج */}
       <section className="p-6 max-w-md mx-auto pt-2 text-black">
         <h3 className="text-xl font-bold text-gray-800 mb-4 border-r-4 border-orange-500 pr-3 text-black">المنتجات (الكتالوج) 🇨🇳</h3>
         <div className="grid grid-cols-2 gap-4">
