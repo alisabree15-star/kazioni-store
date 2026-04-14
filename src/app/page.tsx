@@ -97,6 +97,7 @@ export default function Home() {
     window.open(url, '_blank');
   };
 
+  // دالة الحوالات المالية المخصصة
   const handleTransferClick = (countryName: string, flag: string) => {
     const msg = `مرحباً مؤسسة الحاج كزيوني، أرغب في الاستفسار عن أسعار الصرف اليومية وإرسال حوالة مالية إلى ${countryName} ${flag}.`;
     const url = `https://wa.me/${transfersWhatsapp}?text=${encodeURIComponent(msg)}`;
@@ -113,12 +114,13 @@ export default function Home() {
     { id: 7, name: "ماكينة بيتزا موديل 2025 🔥", img: "/images/product7.jpg", price: "430 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن جوي سريع ✈️)", description: "ماكينة بيتزا تجارية حديثة، مصممة خصيصاً للمطاعم والمقاهي. توفر توزيعاً حرارياً متساوياً لخبز مثالي وسريع.", moq: "1 قطعة", cbm: "0.150", weight: "35" },
     { id: 8, name: "ماكينة التنظيف بالثلج الجاف 👀", img: "/images/product8.jpg", price: "1400 $", pColor: "text-amber-600", shippingNote: "شامل الشحن والعمولة إلى ليبيا (شحن بحري فقط 🚢)", description: "ماكينة تنظيف صناعية متطورة بتقنية الثلج الجاف (Dry Ice Blasting) من Crodium. حل مثالي لتنظيف المحركات وإزالة الشحوم الكربونية.", moq: "1 قطعة", cbm: "0.450", weight: "75" },
     { id: 9, name: "آلة رحي الحبوب المميزة 🥜", img: "/images/product9.jpg", price: "225 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "آلة رحي وتنعيم تجارية من الستانلس ستيل المقاوم للصدأ. مصممة خصيصاً لطحن الحبوب وصنع المعاجين مثل زبدة الفول السوداني والطحينة بكفاءة عالية.", moq: "1 قطعة", cbm: "0.090", weight: "30" },
-    { id: 10, name: "آلة صنع المثلجات (جيلاطي المفترش ❤️)", img: "/images/product10.jpg", price: "400 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "أبهر زبائنك بعروض الآيس كريم المقلي (جيلاطي المفترش) الطازجة والمبتكرة. تتميز هذه الآلة المكتبية المدمجة بسطح تجميد مسطح ومصقول من الستانلس ستيل المقاوم للصدأ، مما يضمن أداءً تجميدياً فائق السرعة.", moq: "1 قطعة", cbm: "0.100", weight: "25" },
-    { id: 11, name: "كرسي تدليك حديث محترف 💺", img: "/images/product11.jpg", price: "650 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن بحري 🚢)", description: "كرسي تدليك احترافي مصمم لتوفير أقصى درجات الاسترخاء والراحة. يتميز بتقنيات متطورة تشمل التدليك بالهواء المضغوط، ونظام تسخين متكامل لدعم الدورة الدموية، وتدليك شامل من الرقبة إلى القدمين.", moq: "1 قطعة", cbm: "1.150", weight: "85" },
+    { id: 10, name: "آلة صنع المثلجات (جيلاطي المفترش ❤️)", img: "/images/product10.jpg", price: "400 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "أبهر زبائنك بعروض الآيس كريم المقلي (جيلاطي المفترش) الطازجة والمبتكرة. تتميز هذه الآلة المكتبية المدمجة بسطح تجميد مسطح ومصقول من الستانلس ستيل المقاوم للصدأ.", moq: "1 قطعة", cbm: "0.100", weight: "25" },
+    { id: 11, name: "كرسي تدليك حديث محترف 💺", img: "/images/product11.jpg", price: "650 $", pColor: "text-amber-600", shippingNote: "السعر شامل الشحن والعمولة (شحن بحري 🚢)", description: "كرسي تدليك احترافي مصمم لتوفير أقصى درجات الاسترخاء والراحة. يتميز بتقنيات متطورة تشمل التدليك بالهواء المضغوط، ونظام تسخين متكامل، وتدليك شامل من الرقبة إلى القدمين.", moq: "1 قطعة", cbm: "1.150", weight: "85" },
     { id: 12, name: "ماكينة رش الأسمنت والطلاء الحديثة 🏗️", img: "/images/product12.jpg", price: "1100 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة رش احترافية عالية الضغط (Airless Sprayer) موديل 1095، مصممة لأعمال البناء والتشطيبات الثقيلة. مثالية لرش الأسمنت، المعجون، والطلاء بكفاءة وسرعة فائقة.", moq: "1 قطعة", cbm: "0.250", weight: "45" },
-    { id: 13, name: "ماكينة طباعه على الملابس المميزة 👕", img: "/images/product13.jpg", price: "270 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة طباعة حرارية (مكبس حراري) احترافية ومتميزة، مثالية لمشاريع الطباعة على الملابس، التيشيرتات، والمسطحات. تتميز بلوحة تسخين توفر توزيعاً حرارياً متساوياً لضمان ثبات الألوان وجودة الطباعة، وشاشة تحكم رقمية لضبط الوقت ودرجة الحرارة بدقة.", moq: "1 قطعة", cbm: "0.080", weight: "25" },
-    { id: 14, name: "آلة دوش محمولة مميزة 🚿", img: "/images/product14.jpg", price: "16 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مضخة استحمام محمولة (دوش متنقل) قابلة للشحن، خيارك الأمثل لرحلات التخييم، السفر، أو الاستخدام المنزلي كحل سريع وعملي. تتميز بتصميم مدمج وخفيف، مع بطارية قوية قابلة لإعادة الشحن عبر USB، وتدفق مياه سلس ومستمر.", moq: "20 قطعة", cbm: "0.005", weight: "0.8" },
-    { id: 15, name: "مثبت تصوير للهواتف (جيمبال) 🎬", img: "/images/product15.jpg", price: "40 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مثبت تصوير احترافي للهواتف الذكية (Gimbal) مزود بثلاثة محاور لمنع الاهتزاز وتصوير فيديوهات سينمائية ناعمة. يتميز بقاعدة تثبيت (ترايبود) مدمجة، ولوحة تحكم ذكية في المقبض لتسهيل التحكم بالزوايا والتقريب.", moq: "10 قطع", cbm: "0.002", weight: "0.5" }
+    { id: 13, name: "ماكينة طباعه على الملابس المميزة 👕", img: "/images/product13.jpg", price: "270 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "ماكينة طباعة حرارية (مكبس حراري) احترافية ومتميزة، مثالية لمشاريع الطباعة على الملابس، التيشيرتات، والمسطحات. تتميز بلوحة تسخين توفر توزيعاً حرارياً متساوياً.", moq: "1 قطعة", cbm: "0.080", weight: "25" },
+    { id: 14, name: "آلة دوش محمولة مميزة 🚿", img: "/images/product14.jpg", price: "16 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مضخة استحمام محمولة (دوش متنقل) قابلة للشحن، خيارك الأمثل لرحلات التخييم، السفر، أو الاستخدام المنزلي كحل سريع وعملي. تتميز بتصميم مدمج وخفيف، وبطارية قوية قابلة لإعادة الشحن.", moq: "20 قطعة", cbm: "0.005", weight: "0.8" },
+    { id: 15, name: "مثبت تصوير للهواتف (جيمبال) 🎬", img: "/images/product15.jpg", price: "40 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "مثبت تصوير احترافي للهواتف الذكية (Gimbal) مزود بثلاثة محاور لمنع الاهتزاز وتصوير فيديوهات سينمائية ناعمة. يتميز بقاعدة تثبيت (ترايبود) مدمجة، ولوحة تحكم ذكية.", moq: "10 قطع", cbm: "0.002", weight: "0.5" },
+    { id: 16, name: "ماكينة تقشير وغسيل البطاطس 🥔", img: "/images/product16.jpg", price: "460 $", pColor: "text-amber-600", shippingNote: "السعر شامل العمولة فقط (لا يشمل الشحن)", description: "الحل الأمثل لتقشير وغسيل البطاطس بكميات تجارية في المطاعم والفنادق! تتميز هذه الآلة الصناعية القوية بهيكل متين مصنوع بالكامل من الستانلس ستيل الصحي والمقاوم للصدأ. توفر عملية مزدوجة: تقشير دقيق وغسيل نظيف في وقت واحد بفضل محركها الجبار وعجلاتها الداخلية الدوارة. مزودة بغطاء شفاف لمراقبة العملية، ومنافذ منفصلة للخروج والتحكم، مما يقلل الجهد اليدوي ويوفر الوقت والكفاءة.", moq: "1 قطعة", cbm: "0.300", weight: "50" }
   ];
 
   if (selectedProduct) {
@@ -192,19 +194,19 @@ export default function Home() {
                 </div>
               ) : (
                 cart.map((item) => (
-                  <div key={item.id} className="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex gap-3 relative">
-                    <button onClick={() => removeFromCart(item.id)} className="absolute top-2 left-2 text-red-500 bg-red-50 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">✕</button>
-                    <img src={item.img} className="w-16 h-16 object-contain bg-gray-50 rounded-lg p-1" />
-                    <div className="flex-1">
-                      <h4 className="text-[11px] font-bold text-gray-800 leading-tight mb-1 pr-6">{item.name}</h4>
-                      <p className="text-amber-600 font-black text-xs mb-2">{item.price}</p>
-                      <div className="flex items-center gap-2 bg-gray-50 rounded p-1 w-fit border border-gray-200">
-                        <button onClick={() => updateCartItemQty(item.id, -1)} className="px-2 font-bold text-gray-600">-</button>
-                        <span className="text-xs font-black">{item.qty}</span>
-                        <button onClick={() => updateCartItemQty(item.id, 1)} className="px-2 font-bold text-gray-600">+</button>
+                    <div key={item.id} className="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex gap-3 relative">
+                      <button onClick={() => removeFromCart(item.id)} className="absolute top-2 left-2 text-red-500 bg-red-50 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">✕</button>
+                      <img src={item.img} className="w-16 h-16 object-contain bg-gray-50 rounded-lg p-1" />
+                      <div className="flex-1">
+                        <h4 className="text-[11px] font-bold text-gray-800 leading-tight mb-1 pr-6">{item.name}</h4>
+                        <p className="text-amber-600 font-black text-xs mb-2">{item.price}</p>
+                        <div className="flex items-center gap-2 bg-gray-50 rounded p-1 w-fit border border-gray-200">
+                          <button onClick={() => updateCartItemQty(item.id, -1)} className="px-2 font-bold text-gray-600">-</button>
+                          <span className="text-xs font-black">{item.qty}</span>
+                          <button onClick={() => updateCartItemQty(item.id, 1)} className="px-2 font-bold text-gray-600">+</button>
+                        </div>
                       </div>
                     </div>
-                  </div>
                 ))
               )}
             </div>
@@ -259,29 +261,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* قسم الحوالات المالية الجديد (تصميم أنيق وأبيض) 💸 */}
+      {/* قسم الحوالات المالية التفاعلي الجديد (تصميم أنيق وأبيض) 💸 */}
       <section className="p-6 max-w-md mx-auto pt-0 text-black">
         <div className="bg-white rounded-3xl p-6 shadow-xl border-t-8 border-emerald-500">
           <h3 className="text-lg font-black text-emerald-800 mb-1 flex items-center tracking-tight">💸 الحوالات المالية الدولية</h3>
-          <p className="text-xs font-bold text-gray-500 mb-4">تحويلات آمنة وسريعة لمورديك. اضغط على الوجهة للتحويل والاستفسار:</p>
+          <p className="text-[10px] font-bold text-gray-500 mb-4">تحويلات آمنة وسريعة لمورديك. اضغط على الوجهة للتحويل والاستفسار 👇</p>
 
           <div className="grid grid-cols-2 gap-3">
-            <button onClick={() => handleTransferClick('الصين', '🇨🇳')} className="flex items-center justify-center gap-2 bg-gray-50 hover:bg-emerald-50 border border-gray-200 rounded-xl p-3 active:scale-95 transition-all shadow-sm">
-              <span className="text-2xl">🇨🇳</span>
-              <span className="font-bold text-gray-800 text-sm">الصين</span>
-            </button>
-            <button onClick={() => handleTransferClick('تركيا', '🇹🇷')} className="flex items-center justify-center gap-2 bg-gray-50 hover:bg-emerald-50 border border-gray-200 rounded-xl p-3 active:scale-95 transition-all shadow-sm">
-              <span className="text-2xl">🇹🇷</span>
-              <span className="font-bold text-gray-800 text-sm">تركيا</span>
-            </button>
-            <button onClick={() => handleTransferClick('مصر', '🇪🇬')} className="flex items-center justify-center gap-2 bg-gray-50 hover:bg-emerald-50 border border-gray-200 rounded-xl p-3 active:scale-95 transition-all shadow-sm">
-              <span className="text-2xl">🇪🇬</span>
-              <span className="font-bold text-gray-800 text-sm">مصر</span>
-            </button>
-            <button onClick={() => handleTransferClick('تونس', '🇹🇳')} className="flex items-center justify-center gap-2 bg-gray-50 hover:bg-emerald-50 border border-gray-200 rounded-xl p-3 active:scale-95 transition-all shadow-sm">
-              <span className="text-2xl">🇹🇳</span>
-              <span className="font-bold text-gray-800 text-sm">تونس</span>
-            </button>
+              <button onClick={() => handleTransferClick('الصين', '🇨🇳')} className="flex items-center justify-center gap-2 bg-gray-50 hover:bg-emerald-50 border border-gray-200 rounded-xl p-3 active:scale-95 transition-all shadow-sm" title="تحويل للصين">
+                  <span className="text-3xl">🇨🇳</span>
+                  <span className="font-bold text-gray-800 text-sm">الصين</span>
+              </button>
+              <button onClick={() => handleTransferClick('تركيا', '🇹🇷')} className="flex items-center justify-center gap-2 bg-gray-50 hover:bg-emerald-50 border border-gray-200 rounded-xl p-3 active:scale-95 transition-all shadow-sm" title="تحويل لتركيا">
+                  <span className="text-3xl">🇹🇷</span>
+                  <span className="font-bold text-gray-800 text-sm">تركيا</span>
+              </button>
+              <button onClick={() => handleTransferClick('مصر', '🇪🇬')} className="flex items-center justify-center gap-2 bg-gray-50 hover:bg-emerald-50 border border-gray-200 rounded-xl p-3 active:scale-95 transition-all shadow-sm" title="تحويل لمصر">
+                  <span className="text-3xl">🇪🇬</span>
+                  <span className="font-bold text-gray-800 text-sm">مصر</span>
+              </button>
+              <button onClick={() => handleTransferClick('تونس', '🇹🇳')} className="flex items-center justify-center gap-2 bg-gray-50 hover:bg-emerald-50 border border-gray-200 rounded-xl p-3 active:scale-95 transition-all shadow-sm" title="تحويل لتونس">
+                  <span className="text-3xl">🇹🇳</span>
+                  <span className="font-bold text-gray-800 text-sm">تونس</span>
+              </button>
           </div>
         </div>
       </section>
