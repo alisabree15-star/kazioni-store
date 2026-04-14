@@ -166,7 +166,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50 text-right font-sans text-black pb-32 relative" dir="rtl">
-      {/* 1. الشريط العلوي الأزرق */}
+      {/* الشريط العلوي الأزرق */}
       <nav className="bg-blue-900 text-white p-4 shadow-xl sticky top-0 z-40 flex justify-between items-center border-b-4 border-amber-500">
         <div>
           <h1 className="text-xl font-black tracking-tighter text-white">الحاج كزيوني & Swivel</h1>
@@ -177,8 +177,17 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 2. شريط متحرك أسفل العنوان (الأخضر للخدمات المتاحة) */}
-      <div className="bg-green-700 text-white p-2 overflow-hidden shadow-inner border-b border-green-800 flex items-center gap-2 px-2">
+      {/* شريط الإعلانات المتحرك بجانب زر تواصل مباشر */}
+      <div className="bg-green-700 text-white overflow-hidden shadow-inner border-b border-green-800 flex items-center gap-2 px-2">
+        {/* الزر الأصفر الجديد */}
+        <a 
+          href={`https://wa.me/${transfersWhatsapp}?text=${encodeURIComponent("مرحباً مؤسسة الحاج كزيوني، أرغب في الاستفسار عن أسعار بيع/شراء USDT اليوم.")}`}
+          target="_blank"
+          className="bg-amber-400 text-black px-3 py-1 text-xs font-black rounded-full shadow whitespace-nowrap active:scale-95 transition-all flex items-center gap-1"
+        >
+          <span className="text-lg">💰</span>
+          تواصل مباشر
+        </a>
         {/* الشريط المتحرك */}
         <div className="animate-marquee font-bold text-sm py-2">
           متوفر بيع وشراء عملة USDT 🟢 تواصل معنا لمعرفة أسعار اليوم.
@@ -268,11 +277,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. استعادة واجهة الحوالات المالية التفاعلية (البطاقة البيضاء) 💸 */}
+      {/* واجهة الحوالات المالية الدولية (البطاقة البيضاء الكبيرة) 💸 */}
       <section className="p-6 max-w-md mx-auto pt-0 text-black">
         <div className="bg-white rounded-3xl p-6 shadow-xl border-t-8 border-emerald-500">
           <h3 className="text-lg font-black text-emerald-800 mb-1 flex items-center tracking-tight">💸 الحوالات المالية الدولية</h3>
-          <p className="text-[10px] font-bold text-gray-500 mb-4">تحويلات آمنة وسريعة لمورديك. اضغط على الوجهة للتحويل والاستفسار 👇</p>
+          <p className="text-[10px] font-bold text-gray-500 mb-4">تحويلات آمنة وسريعة لمورديك لمكتبنا في مصر (الشحن متوفر). اضغط للتحويل والاستفسار 👇</p>
 
           <div className="grid grid-cols-2 gap-3">
               <button onClick={() => handleTransferClick('الصين', '🇨🇳')} className="flex items-center justify-center gap-2 bg-gray-50 hover:bg-emerald-50 border border-gray-200 rounded-xl p-3 active:scale-95 transition-all shadow-sm" title="تحويل للصين">
